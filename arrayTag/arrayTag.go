@@ -29,3 +29,8 @@ func nodeListToArray(root *ListNode) []int {
 	}
 	return result
 }
+
+type point struct{
+	x int
+	y int
+}
