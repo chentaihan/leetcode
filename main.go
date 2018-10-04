@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/chentaihan/leetcode/bitTag"
+	"github.com/chentaihan/leetcode/recallTag"
 )
 
 func main() {
-	bitTag.TestisPowerOfThree()
+	recallTag.TestletterCasePermutation()
 }

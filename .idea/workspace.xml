@@ -2,26 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1fa2573-aba0-4632-a286-8d255bb0cf0a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arrayTag/containsDuplicate.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arrayTag/fairCandySwap.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arrayTag/findLengthOfLCIS.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arrayTag/findShortestSubArray.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arrayTag/isMonotonic.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arrayTag/maxDistToClosest.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arrayTag/maximumSwap.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arrayTag/missingNumber.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arrayTag/selfDividingNumbers.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arrayTag/setZeroes.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arrayTag/threeSum.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bitTag/getSum.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bitTag/hammingWeight.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bitTag/isPowerOfFour.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bitTag/isPowerOfThree.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bitTag/isPowerOfTwo.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bitTag/reverseBits.go" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bitTag/hammingDistance.go" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bitTag/rangeBitwiseAnd.go" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bitTag/totalHammingDistance.go" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/recallTag/letterCasePermutation.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arrayTag/arrayTag.go" afterPath="$PROJECT_DIR$/arrayTag/arrayTag.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.go" afterPath="$PROJECT_DIR$/main.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,42 +23,10 @@
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="154">
-              <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+              <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
               <folding>
-                <element signature="e#14#65#0" expanded="true" />
+                <element signature="e#14#68#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="selfDividingNumbers.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/arrayTag/selfDividingNumbers.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="findLengthOfLCIS.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/arrayTag/findLengthOfLCIS.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-              <folding>
-                <element signature="e#18#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getSum.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bitTag/getSum.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -87,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reverseBits.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bitTag/reverseBits.go">
+      <file leaf-file-name="isPowerOfFour.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bitTag/isPowerOfFour.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="828">
+              <caret line="83" column="5" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="83" selection-end-column="5" />
               <folding>
                 <element signature="e#16#28#0" expanded="true" />
               </folding>
@@ -99,12 +53,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="missingNumber.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/arrayTag/missingNumber.go">
+      <file leaf-file-name="reverseBits.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bitTag/reverseBits.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-              <folding />
+            <state relative-caret-position="288">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding>
+                <element signature="e#16#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="isPowerOfFour.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bitTag/isPowerOfFour.go">
+      <file leaf-file-name="rangeBitwiseAnd.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bitTag/rangeBitwiseAnd.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="83" column="5" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="83" selection-end-column="5" />
+            <state relative-caret-position="165">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="14" selection-end-column="1" />
               <folding>
                 <element signature="e#16#28#0" expanded="true" />
               </folding>
@@ -131,14 +87,48 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="isPowerOfThree.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bitTag/isPowerOfThree.go">
+      <file leaf-file-name="hammingDistance.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bitTag/hammingDistance.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
-              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+              <caret line="9" column="11" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+              <folding>
+                <element signature="e#16#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="totalHammingDistance.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bitTag/totalHammingDistance.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-9">
+              <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
               <folding>
                 <element signature="e#16#33#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="letterCasePermutation.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/recallTag/letterCasePermutation.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="9" column="45" lean-forward="false" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+              <folding>
+                <element signature="e#19#77#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stringHelper.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/stringHelper.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="31">
+              <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -179,7 +169,6 @@
         <option value="$PROJECT_DIR$/arrayTag/findDisappearedNumbers.go" />
         <option value="$PROJECT_DIR$/arrayTag/findDuplicates.go" />
         <option value="$PROJECT_DIR$/arrayTag/majorityElement2.go" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/arrayTag/containsDuplicate.go" />
         <option value="$PROJECT_DIR$/arrayTag/findShortestSubArray.go" />
         <option value="$PROJECT_DIR$/arrayTag/fairCandySwap.go" />
@@ -199,8 +188,13 @@
         <option value="$PROJECT_DIR$/bitTag/reverseBits.go" />
         <option value="$PROJECT_DIR$/arrayTag/missingNumber.go" />
         <option value="$PROJECT_DIR$/bitTag/isPowerOfFour.go" />
-        <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/bitTag/isPowerOfThree.go" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/bitTag/rangeBitwiseAnd.go" />
+        <option value="$PROJECT_DIR$/bitTag/hammingDistance.go" />
+        <option value="$PROJECT_DIR$/bitTag/totalHammingDistance.go" />
+        <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/recallTag/letterCasePermutation.go" />
       </list>
     </option>
   </component>
@@ -248,6 +242,11 @@
               <item name="leetcode" type="b2602c69:ProjectViewProjectNode" />
               <item name="leetcode" type="462c0819:PsiDirectoryNode" />
               <item name="bitTag" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="leetcode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
+              <item name="recallTag" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -395,12 +394,12 @@
       <option name="presentableId" value="Default" />
       <updated>1538284669672</updated>
       <workItem from="1538284674216" duration="18683000" />
-      <workItem from="1538474454499" duration="7957000" />
+      <workItem from="1538474454499" duration="17756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26640000" />
+    <option name="totallyTimeSpent" value="36439000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="805" extended-state="6" />
@@ -482,8 +481,44 @@
           <line>25</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/bitTag/rangeBitwiseAnd.go</url>
+          <line>10</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/bitTag/hammingDistance.go</url>
+          <line>23</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/bitTag/hammingDistance.go</url>
+          <line>11</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/bitTag/totalHammingDistance.go</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/bitTag/totalHammingDistance.go</url>
+          <line>114</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/recallTag/letterCasePermutation.go</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="26" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -493,7 +528,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#14#65#0" expanded="true" />
+            <element signature="e#14#68#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -607,13 +642,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="3" lean-forward="false" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/arrayTag/containsDuplicate.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -657,17 +685,6 @@
           <folding>
             <element signature="e#18#30#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -735,8 +752,45 @@
         <state relative-caret-position="400">
           <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
           <folding>
-            <element signature="e#18#30#0" expanded="true" />
+            <element signature="e#18#30#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/arrayTag/missingNumber.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bitTag/isPowerOfThree.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding>
+            <element signature="e#16#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="3" lean-forward="false" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="88">
+            <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
@@ -756,24 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bitTag/reverseBits.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#16#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/arrayTag/missingNumber.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bitTag/isPowerOfTwo.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -782,9 +818,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bitTag/reverseBits.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#16#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bitTag/isPowerOfFour.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
+        <state relative-caret-position="828">
           <caret line="83" column="5" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="83" selection-end-column="5" />
           <folding>
             <element signature="e#16#28#0" expanded="true" />
@@ -792,22 +838,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
+    <entry file="file://$PROJECT_DIR$/bitTag/rangeBitwiseAnd.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        <state relative-caret-position="165">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="14" selection-end-column="1" />
           <folding>
-            <element signature="e#14#65#0" expanded="true" />
+            <element signature="e#16#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bitTag/isPowerOfThree.go">
+    <entry file="file://$PROJECT_DIR$/bitTag/hammingDistance.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <caret line="9" column="11" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+          <folding>
+            <element signature="e#16#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bitTag/totalHammingDistance.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
           <folding>
             <element signature="e#16#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding>
+            <element signature="e#14#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/stringHelper.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recallTag/letterCasePermutation.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="9" column="45" lean-forward="false" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+          <folding>
+            <element signature="e#19#77#0" expanded="true" />
           </folding>
         </state>
       </provider>
