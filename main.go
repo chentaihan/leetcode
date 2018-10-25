@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/chentaihan/leetcode/recallTag"
+	"github.com/chentaihan/leetcode/arrayTag"
 )
 
 func main() {
-	recallTag.TestletterCasePermutation()
+	arrayTag.TestsortArrayByParityII()
 }

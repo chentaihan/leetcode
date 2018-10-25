@@ -1,4 +1,4 @@
-package mapTag
+package bitTag
 
 import "fmt"
 

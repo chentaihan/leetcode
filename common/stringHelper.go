@@ -33,7 +33,7 @@ func StringArrayEqualEx(str1, str2 [][]string) bool {
 		return false
 	}
 	for i := 0; i < len(str1); i++ {
-		if !StringEqual(str1[i], str2[i]) {
+		if !StringEqualEx(str1[i], str2[i]) {
 			return false
 		}
 	}
