@@ -48,3 +48,11 @@ func IntEqualEx(nums1, nums2 [][]int) bool {
 	}
 	return true
 }
+
+func CopyInts(array []int) []int {
+	ret := make([]int, len(array))
+	for i := 0; i < len(array); i++ {
+		ret[i] = array[i]
+	}
+	return ret
+}
