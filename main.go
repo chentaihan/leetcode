@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/chentaihan/leetcode/bitTag"
+	"github.com/chentaihan/leetcode/linkedTag"
 )
 
 func main() {
-	 bitTag.Testsubsets()
+	linkedTag.TestreverseList()
 }
