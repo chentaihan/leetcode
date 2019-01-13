@@ -30,3 +30,11 @@ func NodeListToArray(root *ListNode) []int {
 	return result
 }
 
+func GetListNodeCount(root *ListNode) int {
+	count := 0
+	for root != nil{
+		count ++
+		root = root.Next
+	}
+	return count
+}
