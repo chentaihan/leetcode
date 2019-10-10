@@ -2,35 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1fa2573-aba0-4632-a286-8d255bb0cf0a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/bitTag/findRepeatedDnaSequences.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bitTag/hasAlternatingBits.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/depthFirstTag/isValidBST.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/depthFirstTag/sortedListToBST.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/designTag/LRUCache.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/designTag/MinStack.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamicTag/findIntegers.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/linkedTag/addTwoNumbers.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/linkedTag/deleteDuplicates.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/linkedTag/removeNthFromEnd.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/linkedTag/reverseKGroup.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/linkedTag/rotateRight.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/linkedTag/swapPairs.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapTag/MyHashMap.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapTag/MyHashMapEx.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sortTag/largestNumber.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sortTag/sortColors.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stackTag/findKthLargest.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stringTag/decodeString.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/treeTag/buildTree.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/treeTag/flatten.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/treeTag/postorderTraversal.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/treeTag/preorderTraversal.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/treeTag/sumNumbers.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/linkedTag/deleteDuplicates_s.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/linkedTag/detectCycle.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/linkedTag/hasCycle.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/linkedTag/mergeKLists.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/linkedTag/oddEvenList.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/linkedTag/partition.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/linkedTag/reorderList.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/linkedTag/reverseBetween.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linkedTag/linked.go" beforeDir="false" afterPath="$PROJECT_DIR$/linkedTag/linked.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/title/addTwoNumbers.go" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -551,6 +532,26 @@
           <url>file://$PROJECT_DIR$/linkedTag/deleteDuplicates.go</url>
           <line>33</line>
           <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/linkedTag/deleteDuplicates.go</url>
+          <line>28</line>
+          <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/linkedTag/partition.go</url>
+          <line>82</line>
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/linkedTag/reverseBetween.go</url>
+          <line>48</line>
+          <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/linkedTag/reorderList.go</url>
+          <line>49</line>
+          <option name="timeStamp" value="165" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

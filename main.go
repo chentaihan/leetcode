@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	linkedTag.TestdeleteDuplicates()
+	linkedTag.TestreorderList()
 }
