@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/chentaihan/leetcode/linkedTag"
+	"github.com/chentaihan/leetcode/treeTag"
 )
 
 func main() {
-	linkedTag.TestreorderList()
+	treeTag.TestdeleteNode()
 }

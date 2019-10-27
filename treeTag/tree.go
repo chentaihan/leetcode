@@ -257,6 +257,30 @@ func MaxNode(root *TreeNode) *TreeNode {
 将数组转换成一个普通的二叉树
 如果数组的值为-1，表示这个地方没有对应节点
 */
+func TreeToArray(root *TreeNode) []int {
+	var result []int
+	if root == nil {
+		 return result
+	}
+	queue := Queue{}
+	queue.Push(root)
+	for !queue.Empty() {
+		node := queue.Pop()
+		result = append(result, node.Val)
+		if node.Left != nil {
+			queue.Push(node.Left)
+		}
+		if node.Right != nil {
+			queue.Push(node.Right)
+		}
+	}
+	return result
+}
+
+/**
+将数组转换成一个普通的二叉树
+如果数组的值为-1，表示这个地方没有对应节点
+*/
 func ArrayToTree(nums []int) *TreeNode {
 	if len(nums) == 0 {
 		return nil
