@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1fa2573-aba0-4632-a286-8d255bb0cf0a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/linkedTag/nextLargerNodes.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/linkedTag/splitListToParts.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/treeTag/deleteNode.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/arrayTag/findPeakElement.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/arrayTag/longestConsecutive.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/arrayTag/removeDuplicates.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/arrayTag/searchRange.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linkedTag/oddEvenList.go" beforeDir="false" afterPath="$PROJECT_DIR$/linkedTag/oddEvenList.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treeTag/tree.go" beforeDir="false" afterPath="$PROJECT_DIR$/treeTag/tree.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -569,6 +568,16 @@
           <url>file://$PROJECT_DIR$/treeTag/deleteNode.go</url>
           <line>184</line>
           <option name="timeStamp" value="175" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/arrayTag/removeDuplicates.go</url>
+          <line>52</line>
+          <option name="timeStamp" value="177" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/arrayTag/longestConsecutive.go</url>
+          <line>31</line>
+          <option name="timeStamp" value="178" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
