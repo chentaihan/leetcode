@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1fa2573-aba0-4632-a286-8d255bb0cf0a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/arrayTag/findPeakElement.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/arrayTag/longestConsecutive.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/arrayTag/removeDuplicates.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/arrayTag/searchRange.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/arrayTag/canThreePartsEqualSum.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/arrayTag/findDuplicate.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/arrayTag/findMin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/arrayTag/findPairs.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/arrayTag/pivotIndex.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/arrayTag/prefixesDivBy5.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/arrayTag/productExceptSelf.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/arrayTag/rotate.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
@@ -576,8 +580,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/arrayTag/longestConsecutive.go</url>
-          <line>31</line>
+          <line>33</line>
           <option name="timeStamp" value="178" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/arrayTag/productExceptSelf.go</url>
+          <line>55</line>
+          <option name="timeStamp" value="184" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/arrayTag/findPairs.go</url>
+          <line>45</line>
+          <option name="timeStamp" value="190" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/arrayTag/pivotIndex.go</url>
+          <line>48</line>
+          <option name="timeStamp" value="198" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

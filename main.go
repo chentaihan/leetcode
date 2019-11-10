@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	arrayTag.TestlongestConsecutive()
+	arrayTag.TestpivotIndex()
 }
