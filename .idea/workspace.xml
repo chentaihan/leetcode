@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1fa2573-aba0-4632-a286-8d255bb0cf0a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/arrayTag/game.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/queueTag/RecentCounter.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/queueTag/queue.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/treeTag/countNodes.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/treeTag/lowestCommonAncestor236.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/treeTag/rangeSumBST.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/treeTag/rightSideView.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/treeTag/tree2str.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mapTag/powerfulIntegers.go" beforeDir="false" afterPath="$PROJECT_DIR$/mapTag/powerfulIntegers.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -614,6 +614,26 @@
           <url>file://$PROJECT_DIR$/queueTag/RecentCounter.go</url>
           <line>60</line>
           <option name="timeStamp" value="203" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/treeTag/rightSideView.go</url>
+          <line>45</line>
+          <option name="timeStamp" value="205" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/treeTag/rightSideView.go</url>
+          <line>137</line>
+          <option name="timeStamp" value="206" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/treeTag/tree2str.go</url>
+          <line>87</line>
+          <option name="timeStamp" value="207" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/treeTag/tree2str.go</url>
+          <line>49</line>
+          <option name="timeStamp" value="208" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
