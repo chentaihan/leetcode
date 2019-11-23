@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1fa2573-aba0-4632-a286-8d255bb0cf0a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/treeTag/countNodes.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/treeTag/lowestCommonAncestor236.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/treeTag/rangeSumBST.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/treeTag/rightSideView.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/treeTag/tree2str.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/treeTag/addOneRow.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
