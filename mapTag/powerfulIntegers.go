@@ -45,6 +45,8 @@ func powerfulIntegers(x int, y int, bound int) []int {
 			
 		}
 	}
+
+	return nil
 }
 
 func power(x, count int) int {

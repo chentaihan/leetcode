@@ -2,22 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1fa2573-aba0-4632-a286-8d255bb0cf0a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/dynamicTag/isSubsequence.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamicTag/maxSubArray.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamicTag/minimumTotal.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapTag/commonChars.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapTag/distributeCandies.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapTag/findLHS.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapTag/findRestaurant.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapTag/intersect.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapTag/isAlienSorted.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapTag/isIsomorphic.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapTag/powerfulIntegers.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapTag/shortestCompletingWord.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapTag/uncommonFromSentences.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapTag/wordPattern.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/arrayTag/game.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/queueTag/RecentCounter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/queueTag/queue.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapTag/powerfulIntegers.go" beforeDir="false" afterPath="$PROJECT_DIR$/mapTag/powerfulIntegers.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +37,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="/usr/local/go" />
+  <component name="GOROOT" path="/usr/local/Cellar/go/1.13.4/libexec" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -613,6 +604,16 @@
           <url>file://$PROJECT_DIR$/mapTag/isAlienSorted.go</url>
           <line>61</line>
           <option name="timeStamp" value="201" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/queueTag/RecentCounter.go</url>
+          <line>69</line>
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/queueTag/RecentCounter.go</url>
+          <line>60</line>
+          <option name="timeStamp" value="203" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
