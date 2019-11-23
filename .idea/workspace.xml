@@ -2,14 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1fa2573-aba0-4632-a286-8d255bb0cf0a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/arrayTag/canThreePartsEqualSum.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/arrayTag/findDuplicate.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/arrayTag/findMin.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/arrayTag/findPairs.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/arrayTag/pivotIndex.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/arrayTag/prefixesDivBy5.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/arrayTag/productExceptSelf.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/arrayTag/rotate.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamicTag/isSubsequence.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamicTag/maxSubArray.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamicTag/minimumTotal.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapTag/commonChars.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapTag/distributeCandies.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapTag/findLHS.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapTag/findRestaurant.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapTag/intersect.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapTag/isAlienSorted.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapTag/isIsomorphic.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapTag/powerfulIntegers.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapTag/shortestCompletingWord.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapTag/uncommonFromSentences.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapTag/wordPattern.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
@@ -597,6 +603,16 @@
           <url>file://$PROJECT_DIR$/arrayTag/pivotIndex.go</url>
           <line>48</line>
           <option name="timeStamp" value="198" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/mapTag/shortestCompletingWord.go</url>
+          <line>50</line>
+          <option name="timeStamp" value="199" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/mapTag/isAlienSorted.go</url>
+          <line>61</line>
+          <option name="timeStamp" value="201" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
