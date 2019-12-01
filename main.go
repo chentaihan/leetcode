@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	treeTag.TestflipEquiv()
+	treeTag.TestisCompleteTree()
 }
