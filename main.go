@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/chentaihan/leetcode/mapTag"
+	"github.com/chentaihan/leetcode/treeTag"
 )
 
 func main() {
-	mapTag.TestisAlienSorted()
+	treeTag.TestflipEquiv()
 }
