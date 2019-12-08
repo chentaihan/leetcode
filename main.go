@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	arrayTag.TestsearchMatrix()
+	arrayTag.TestsubarraySum()
 }
