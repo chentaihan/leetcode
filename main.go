@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	arrayTag.TestsubarraySum()
+	arrayTag.TestvalidMountainArray()
 }
