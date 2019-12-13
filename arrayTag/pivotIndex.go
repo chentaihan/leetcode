@@ -34,26 +34,37 @@ nums 的长度范围为 [0, 10000]。
 链接：https://leetcode-cn.com/problems/find-pivot-index
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
+方案一：从左往右开始累积，从右往走开始累加，存在一个值，他的左右的累加和相等
+方案二：1先求出总和，在从左往右求和，左边和 == 总和 - 当前值 - 左边和
 */
 
 func pivotIndex(nums []int) int {
 	if len(nums) <= 2 {
 		return -1
 	}
-	start, end := 0, len(nums)-1
-	left, right := nums[0], nums[end]
-	for start < end {
-		if end-start == 2 && left == right {
-			return start + 1
-		}
-		if (left == right) || (left > right && nums[end] >= 0) || (left < right && nums[end] <= 0) {
-			end--
-			right += nums[end]
-		} else {
-			start++
-			left += nums[start]
-		}
 
+	leftSum := make([]int, len(nums))
+	leftSum[0] = nums[0]
+	for i := 1; i < len(nums); i++ {
+		leftSum[i] = leftSum[i-1] + nums[i]
+	}
+
+	rightSum := make([]int, len(nums))
+	rightSum[len(nums)-1] = nums[len(nums)-1]
+	for i := len(nums) - 2; i >= 0; i-- {
+		rightSum[i] = rightSum[i+1] + nums[i]
+	}
+
+	if rightSum[1] == 0 {
+		return 0
+	}
+	for i := 1; i < len(nums)-1; i++ {
+		if leftSum[i-1] == rightSum[i+1] {
+			return i
+		}
+	}
+	if leftSum[len(leftSum)-2] == 0 {
+		return len(leftSum) - 1
 	}
 	return -1
 }
@@ -63,6 +74,34 @@ func TestpivotIndex() {
 		nums  []int
 		index int
 	}{
+		{
+			[]int{-1, -1, -1, 0, 1, 1},
+			0,
+		},
+		{
+			[]int{-1, -1, -1, 0, 3, 1},
+			5,
+		},
+		{
+			[]int{-1, 7, -3, 7, -5, 4, -6, 6},
+			2,
+		},
+		{
+			[]int{-1, -1, -1, 0, -1, -1},
+			2,
+		},
+		{
+			[]int{-1, -1, -1, 0, -1, -1, -1},
+			3,
+		},
+		{
+			[]int{1, 7, 3, 6, 5, 6},
+			3,
+		},
+		{
+			[]int{-1, -7, -3, -6, -5, -6},
+			3,
+		},
 		{
 			[]int{0, -1, -1, -1, 0, -1, 0, -1, -1, -1},
 			5,
@@ -80,16 +119,20 @@ func TestpivotIndex() {
 			4,
 		},
 		{
-			[]int{0, 0, 0, 0, 0, 0, 0},
+			[]int{1, 2, 3},
+			-1,
+		},
+		{
+			[]int{1, 2, 1},
 			1,
 		},
 		{
-			[]int{1, 7, 3, 6, 5, 6},
-			3,
+			[]int{1, 5, 2, 1, 5},
+			2,
 		},
 		{
-			[]int{1, 2, 3},
-			-1,
+			[]int{10, 5, 2, 5, 1, 5, 4},
+			2,
 		},
 		{
 			[]int{},

@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	arrayTag.TestvalidMountainArray()
+	arrayTag.TestdominantIndex()
 }
