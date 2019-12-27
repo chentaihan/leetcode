@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/chentaihan/leetcode/arrayTag"
+	"github.com/chentaihan/leetcode/sortTag"
 )
 
 func main() {
-	arrayTag.TestdominantIndex()
+	sortTag.TestMerge()
 }
