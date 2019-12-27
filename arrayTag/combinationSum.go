@@ -1,8 +1,8 @@
 package arrayTag
 
 import (
-	"sort"
 	"fmt"
+	"sort"
 )
 
 /**
@@ -23,7 +23,7 @@ candidates 中的数字可以无限制重复被选取。
   [7],
   [2,2,3]
 ]
- */
+*/
 
 //二分查找
 func binarySearch(nums []int, target int) int {
@@ -41,38 +41,34 @@ func binarySearch(nums []int, target int) int {
 
 	return -1
 }
-
-func copyArray(nums []int) []int {
-	array := make([]int, len(nums))
-	copy(array, nums)
-	return array
-}
-
 func combinationSum(candidates []int, target int) [][]int {
 	if len(candidates) == 0 {
 		return [][]int{}
 	}
 	sort.Ints(candidates)
-	result := make([][]int, 0)
-	combineSum(candidates, []int{target}, &result)
-	return result
+	return combineSum(candidates, target)
 }
 
-func combineSum(candidates []int, target []int, result *[][]int) {
-	for _, num := range candidates {
-		index := binarySearch(candidates, target[len(target)-1])
-		if index >= 0 {
-			*result = append(*result, target)
-		}
-
-		newValue := target[len(target)-1] - num
-		if newValue >= candidates[0] {
-			target = copyArray(target)
-			target[len(target)-1] = num
-			target = append(target, newValue)
-			combineSum(candidates, target, result)
+func combineSum(candidates []int, target int) [][]int {
+	var result [][]int
+	if len(candidates) == 0 || target < candidates[0] {
+		return result
+	}
+	for i, num := range candidates {
+		if target == num {
+			item := []int{num}
+			result = append(result, item)
+		} else if num > target {
+			break
+		} else {
+			res := combineSum(candidates[i:], target-num)
+			for _, list := range res {
+				item := append([]int{num}, list...)
+				result = append(result, item)
+			}
 		}
 	}
+	return result
 }
 
 func TestCombinationSum() {
