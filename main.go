@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/chentaihan/leetcode/dynamicTag"
+	"github.com/chentaihan/leetcode/sortTag"
 )
 
 func main() {
-	dynamicTag.TestRob()
+	sortTag.TestMerge()
 }
