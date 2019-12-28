@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	dynamicTag.TestlengthOfLIS()
+	dynamicTag.TestRob()
 }
