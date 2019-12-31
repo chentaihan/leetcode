@@ -18,48 +18,33 @@ import "fmt"
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/subarray-sum-equals-k
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-TODO
 */
 
-func subarraySum(nums []int, k int) int {
-	sum, start, count := 0, 0, 0
-	for i := 0; i < len(nums); i++ {
-		sum += nums[i]
-		if sum < k {
-			if nums[i] > k {
-				for sum < k && start < i {
-					sum -= nums[start]
-					start++
-					if sum == k {
-						count++
-					}
-				}
-			} else if nums[i] == k {
-				count++
-				start = i
-				sum = k
-			}
-			continue
-		}
-		if sum == k {
-			count++
-			for j := i + 1; j < len(nums); j++ {
-				if nums[j] == 0 {
-					count++
-				} else {
-					break
-				}
-			}
-		}
-		for sum >= k && start < i {
-			sum -= nums[start]
-			start++
+func subarraySumold(nums []int, k int) int {
+	maxValue, count := 0, 0
+	for end := 0; end < len(nums); end++ {
+		maxValue += nums[end]
+		sum := maxValue
+		for start := 0; start <= end; start++ {
 			if sum == k {
 				count++
 			}
+			sum -= nums[start]
 		}
 	}
 	return count
+}
+
+func subarraySum(nums []int, k int) int {
+	res, sum := 0, 0
+	m := make(map[int]int, len(nums))
+	m[0] = 1
+	for i := range nums {
+		sum += nums[i]
+		res += m[sum-k]
+		m[sum]++
+	}
+	return res
 }
 
 func TestsubarraySum() {
@@ -69,7 +54,12 @@ func TestsubarraySum() {
 		count int
 	}{
 		{
-			[]int{28,54,7,-70,22,65,-6},
+			[]int{},
+			100,
+			0,
+		},
+		{
+			[]int{28, 54, 7, -70, 22, 65, -6},
 			100,
 			1,
 		},
@@ -81,12 +71,12 @@ func TestsubarraySum() {
 		{
 			[]int{-1, -1, 1, 1},
 			1,
-			2,
+			3,
 		},
 		{
 			[]int{-1, -1, 1, 1, 0},
 			1,
-			3,
+			5,
 		},
 		{
 			[]int{-1, -1, 1},

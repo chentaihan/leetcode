@@ -1,9 +1,10 @@
 package main
 
-import (
-	"github.com/chentaihan/leetcode/sortTag"
-)
+import "github.com/chentaihan/leetcode/arrayTag"
 
 func main() {
-	sortTag.TestMerge()
+
+	arrayTag.TestsubarraySum()
+
 }
+
