@@ -1,10 +1,12 @@
 package main
 
-import "github.com/chentaihan/leetcode/arrayTag"
+import (
+	"github.com/chentaihan/leetcode/mapTag"
+)
 
 func main() {
 
-	arrayTag.TestsubarraySum()
+	mapTag.TestdailyTemperatures()
 
 }
 
