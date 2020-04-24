@@ -1,5 +1,10 @@
 package dynamicTag
 
+import (
+	"fmt"
+	"sort"
+)
+
 /**
 646. 最长数对链
 给出 n 个数对。 在每一个数对中，第一个数字总是比第二个数字小。
@@ -13,8 +18,60 @@ package dynamicTag
 输入: [[1,2], [2,3], [3,4]]
 输出: 2
 解释: 最长的数对链是 [1,2] -> [3,4]
- */
+*/
 
 func findLongestChain(pairs [][]int) int {
-	return 0
+	if len(pairs) <= 1 {
+		return len(pairs)
+	}
+	sort.Slice(pairs, func(i, j int) bool {
+		if pairs[i][0] < pairs[j][0] || (pairs[i][0] == pairs[j][0] && pairs[i][1] < pairs[j][1]) {
+			return true
+		}
+		return false
+	})
+	count := 1
+	index := 0
+	for i := 1; i < len(pairs); i++ {
+		if pairs[i][0] > pairs[index][1] {
+			index = i
+			count++
+		} else if pairs[i][1] < pairs[index][1] {
+			index = i
+		}
+	}
+	return count
+}
+
+func TestfindLongestChain() {
+	tests := []struct {
+		pairs  [][]int
+		result int
+	}{
+		{
+			[][]int{{-10, -8}, {-6, -4}, {-5, 0}, {-4, 7}, {1, 7}, {6, 10}, {8, 9}, {9, 10}},
+			4,
+		},
+		{
+			[][]int{{1, 2}, {2, 3}, {3, 4}},
+			2,
+		},
+		{
+			[][]int{{1, 2}, {3, 4}, {5, 6}},
+			3,
+		},
+		{
+			[][]int{{1, 2}, {3, 5}, {5, 6}},
+			2,
+		},
+		{
+			[][]int{{1, 2}, {3, 4}, {3, 6}, {5, 6}},
+			3,
+		},
+	}
+
+	for _, test := range tests {
+		result := findLongestChain(test.pairs)
+		fmt.Println(result == test.result)
+	}
 }
