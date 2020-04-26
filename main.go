@@ -1,7 +1,7 @@
 package main
 
-import "github.com/chentaihan/leetcode/trie"
+import "github.com/chentaihan/leetcode/recallTag"
 
 func main() {
-	trie.TestMapSum()
+	recallTag.Testcombine()
 }
