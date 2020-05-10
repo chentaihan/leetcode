@@ -40,19 +40,28 @@ package mapTag
 */
 
 func powerfulIntegers(x int, y int, bound int) []int {
-	for i := 0; i < x; i++ {
-		for j := 0; j < y; j++ {
-			
+	m := map[int]struct{}{}
+	xValue := 1
+	for i := 0; i < bound; i++ {
+		yValue := 1
+		for j := 0; j < bound; j++ {
+			if xValue+yValue <= bound {
+				m[xValue+yValue] = struct{}{}
+			} else {
+				break
+			}
+			yValue *= y
+		}
+		xValue *= x
+		if xValue > bound {
+			break
 		}
 	}
-
-	return nil
-}
-
-func power(x, count int) int {
-	result := x
-	for i := 1; i < count; i++ {
-		result *= x
+	result := make([]int, len(m))
+	index := 0
+	for key := range m {
+		result[index] = key
+		index++
 	}
 	return result
 }
