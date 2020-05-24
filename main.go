@@ -1,7 +1,9 @@
 package main
 
-import "github.com/chentaihan/leetcode/recallTag"
+import (
+	"github.com/chentaihan/leetcode/heapTag"
+)
 
 func main() {
-	recallTag.Testcombine()
+	heapTag.TestsmallestK()
 }
