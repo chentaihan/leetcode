@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/chentaihan/leetcode/heapTag"
+	"github.com/chentaihan/leetcode/treeTag"
 )
 
 func main() {
-	heapTag.TestsmallestK()
+	treeTag.TestpseudoPalindromicPaths()
 }
