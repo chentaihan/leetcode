@@ -1,9 +1,7 @@
 package main
 
-import (
-	"github.com/chentaihan/leetcode/treeTag"
-)
+import "github.com/chentaihan/leetcode/heapTag"
 
 func main() {
-	treeTag.TestpseudoPalindromicPaths()
+	heapTag.TesttopKFrequent()
 }
