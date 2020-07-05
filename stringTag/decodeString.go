@@ -1,11 +1,12 @@
 package stringTag
 
 import (
-	"bytes"
 	"fmt"
 	"strconv"
+	"strings"
 )
 
+//394. 字符串解码
 //给定一个经过编码的字符串，返回它解码后的字符串。
 //
 // 编码规则为: k[encoded_string]，表示其中方括号内部的 encoded_string 正好重复 k 次。注意 k 保证为正整数。
@@ -23,136 +24,92 @@ import (
 //
 //
 
-func decodeStringold(s string) string {
-	var buffer bytes.Buffer
-	var countList []int
-	in := false
-	var inBuf []byte
-	for i := 0; i < len(s); i++ {
-		if in {
-			if s[i] == ']' {
-				in = false
-				count := countList[len(countList)-1]
-				countList = countList[:len(countList)-1]
-				for count > 0 {
-					buffer.Write(inBuf)
-					count--
-				}
-				inBuf = inBuf[:0]
-			} else {
-				inBuf = append(inBuf, s[i])
-			}
-			continue
-		}
-		if s[i] == '[' {
-			in = true
-			continue
-		}
-		if s[i] >= '0' && s[i] <= '9' {
-			start := i
-			for s[i] >= '0' && s[i] <= '9' {
-				i++
-			}
-			count, _ := strconv.Atoi(string(s[start:i]))
-			countList = append(countList, count)
-			i--
-		} else {
-			buffer.WriteByte(s[i])
-		}
-	}
-	return buffer.String()
-}
-
-type token struct {
-	before  string
-	after   string
-	count   int
-	content string
-}
-
-type tokenNode struct {
-	token
-	children []*tokenNode
-}
-
-func (tn *tokenNode) String() string {
-	var buffer bytes.Buffer
-	if len(tn.children) == 0 {
-		buffer.WriteString(tn.before)
-		for i := 0; i < tn.count; i++ {
-			buffer.WriteString(tn.content)
-		}
-		buffer.WriteString(tn.after)
-		return buffer.String()
-	}
-	buffer.WriteString(tn.before)
-	for i := 0; i < tn.count; i++ {
-		for _, child := range tn.children {
-			buffer.WriteString(child.String())
-		}
-	}
-	buffer.WriteString(tn.after)
-	return buffer.String()
-}
-
 func decodeString(s string) string {
-	nodeList := []*tokenNode{
-		&tokenNode{},
+	if strings.Index(s, "[") < 0 {
+		return s
 	}
-	index := 0
-	curNode := nodeList[index]
+	var result []byte
+	for len(s) > 0 {
+		var buf []byte
+		buf, s = decodeParse(s)
+		val := decodeValue(string(buf))
+		result = append(result, val...)
+	}
+	return string(result)
+}
 
-	var buffer bytes.Buffer
-	depth := 0
-	start := 0
-	before, after := "", ""
-	var inbuf bytes.Buffer
-	for i := 0; i < len(s); i++ {
-		if s[i] == ']' {
-			depth--
-			start = i + 1
-			inbuf.Reset()
-			continue
-		}
-		if s[i] == '[' {
-			depth++
-			start = i + 1
-			continue
-		}
-		if s[i] >= '0' && s[i] <= '9' {
-			if before == "" {
-				before = s[start:i]
-			} else {
-				after = s[start:i]
+func decodeValue(buf string) []byte {
+	if len(buf) == 0 {
+		return []byte{}
+	}
+	if decodeJudge(buf) {
+		index := 1
+		for ; index < len(buf); index++ {
+			if buf[index] < '0' || buf[index] > '9' {
+				break
 			}
+		}
+		count, _ := strconv.Atoi(buf[:index])
+		value := decodeValue(buf[index+1 : len(buf)-1])
+		result := make([]byte, count*len(value))
+		for i := 0; i < count*len(value); i += len(value) {
+			copy(result[i:], value)
+		}
+		return result
+	} else {
+		return []byte(decodeString(buf))
+	}
+}
 
-			start := i
-			for s[i] >= '0' && s[i] <= '9' {
-				i++
-			}
-			count, _ := strconv.Atoi(string(s[start:i]))
-			i--
-			if depth < 1 {
-				curNode.before = before
-				curNode.count = count
-				curNode.after = after
-			} else {
-				node := &tokenNode{
-					token: token{
-						before: before,
-						count:  count,
-						after:  after,
-					},
+func decodeJudge(buf string) bool {
+	if buf[0] >= '0' && buf[0] <= '9' && buf[len(buf)-1] == ']' {
+		count, i := 0, 0
+		for ; i < len(buf); i++ {
+			if buf[i] == '[' {
+				count++
+			} else if buf[i] == ']' {
+				count--
+				if count == 0 {
+					break
 				}
-				curNode.children = append(curNode.children, node)
-				curNode = node
 			}
-			before, after = "", ""
-		} else {
-			inbuf.WriteByte(s[i])
+		}
+		if i == len(buf)-1 {
+			return true
 		}
 	}
-	return buffer.String()
+	return false
+}
+
+func decodeParse(s string) ([]byte, string) {
+	if len(s) == 0 {
+		return []byte{}, ""
+	}
+	var buf []byte
+	if s[0] >= '0' && s[0] <= '9' {
+		count, i := 0, 0
+		for ; i < len(s); i++ {
+			buf = append(buf, s[i])
+			if s[i] == '[' {
+				count++
+			} else if s[i] == ']' {
+				count--
+				if count == 0 {
+					break
+				}
+			}
+		}
+		return buf, s[i+1:]
+	} else {
+		i := 0
+		for ; i < len(s); i++ {
+			if s[i] >= '0' && s[i] <= '9' {
+				break
+			}
+			buf = append(buf, s[i])
+		}
+		return buf, s[i:]
+	}
 }
 
 func TestdecodeString() {
@@ -160,6 +117,31 @@ func TestdecodeString() {
 		s      string
 		result string
 	}{
+		{
+			"3[z]2[2[y]pq4[2[jk]e1[f]]]ef",
+			"zzzyypqjkjkefjkjkefjkjkefjkjkefyypqjkjkefjkjkefjkjkefjkjkefef",
+		},
+		{
+			"3[abc]",
+			"abcabcabc",
+		},
+		{
+			"abc",
+			"abc",
+		},
+
+		{
+			"3[abc]ef",
+			"abcabcabcef",
+		},
+		{
+			"3[a2[c]b]",
+			"accbaccbaccb",
+		},
+		{
+			"3[a2[c2[xx]]b]",
+			"acxxxxcxxxxbacxxxxcxxxxbacxxxxcxxxxb",
+		},
 		{
 			"3[a]2[bc]",
 			"aaabcbc",
@@ -173,13 +155,18 @@ func TestdecodeString() {
 			"abcabccdcdcdef",
 		},
 		{
-			"dssdsd3[a2[c]bb3[cc]gff]dsdsd",
-			"accaccacc",
+			"2[abc]3[cd]ef2[abc]3[cd]",
+			"abcabccdcdcdefabcabccdcdcd",
 		},
 	}
 
 	for _, test := range tests {
 		result := decodeString(test.s)
-		fmt.Println(result == test.result)
+		if result != test.result {
+			fmt.Println(result, "  ", test.result)
+		} else {
+			fmt.Println(true)
+		}
+
 	}
 }

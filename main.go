@@ -1,7 +1,9 @@
 package main
 
-import "github.com/chentaihan/leetcode/heapTag"
+import (
+	"github.com/chentaihan/leetcode/stringTag"
+)
 
 func main() {
-	heapTag.TesttopKFrequent()
+	stringTag.TestdecodeString()
 }
