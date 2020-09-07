@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/chentaihan/leetcode/stringTag"
+	"github.com/chentaihan/leetcode/linkedTag"
 )
 
 func main() {
-	stringTag.TestdecodeString()
+	linkedTag.TestremoveZeroSumSublists()
 }
