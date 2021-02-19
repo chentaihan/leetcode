@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	arrayTag.TestminOperations()
+	arrayTag.TestsumZero()
 }
