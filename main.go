@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	stringTag.TestdecodeString()
+	stringTag.TestscoreOfParentheses()
 }
