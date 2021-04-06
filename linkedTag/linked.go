@@ -29,3 +29,12 @@ func CreateList(array []int) *ListNode {
 	}
 	return root
 }
+
+func NodeListToArray(root *ListNode) []int {
+	result := []int{}
+	for root != nil {
+		result = append(result, root.Val)
+		root = root.Next
+	}
+	return result
+}

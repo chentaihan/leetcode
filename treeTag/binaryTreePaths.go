@@ -2,13 +2,13 @@ package treeTag
 
 /**
 257. 二叉树的所有路径
- */
+*/
 
 import (
-	"strconv"
-	"strings"
 	"fmt"
 	"github.com/chentaihan/leetcode/common"
+	"strconv"
+	"strings"
 )
 
 func binaryTreePaths(root *TreeNode) []string {
@@ -32,9 +32,27 @@ func binaryTreePaths(root *TreeNode) []string {
 	return rest
 }
 
-func TestbinaryTreePaths(){
+func binaryTreePathsEx(root *TreeNode) []string {
+	var rest []string
+	var minPrint func(node *TreeNode, path string)
+	minPrint = func(node *TreeNode, path string) {
+		if node != nil {
+			path += strconv.Itoa(node.Val)
+			if node.Left == nil && node.Right == nil {
+				rest = append(rest, path)
+				return
+			}
+			minPrint(node.Left, path+"->")
+			minPrint(node.Right, path+"->")
+		}
+	}
+	minPrint(root, "")
+	return rest
+}
+
+func TestbinaryTreePaths() {
 	tests := []struct {
-		nums       []int
+		nums   []int
 		result []string
 	}{
 		{
@@ -47,52 +65,52 @@ func TestbinaryTreePaths(){
 		},
 		{
 			[]int{1, 2, 2},
-			[]string{"1->2","1->2"},
+			[]string{"1->2", "1->2"},
 		},
 		{
 			[]int{1, 2, 2, 3},
-			[]string{"1->2->3","1->2"},
+			[]string{"1->2->3", "1->2"},
 		},
 		{
 			[]int{1, 2, 2, 3, 3},
-			[]string{"1->2->3","1->2->3","1->2"},
+			[]string{"1->2->3", "1->2->3", "1->2"},
 		},
 		{
 			[]int{1, 2, 2, 3, 3, 3},
-			[]string{"1->2->3","1->2->3","1->2->3"},
+			[]string{"1->2->3", "1->2->3", "1->2->3"},
 		},
 		{
 			[]int{1, 2, 2, 3, 3, 3, 3},
-			[]string{"1->2->3","1->2->3","1->2->3","1->2->3"},
+			[]string{"1->2->3", "1->2->3", "1->2->3", "1->2->3"},
 		},
 		{
 			[]int{1, 2, 2, 3, 3, 3, 3, 4},
-			[]string{"1->2->3->4","1->2->3","1->2->3","1->2->3"},
+			[]string{"1->2->3->4", "1->2->3", "1->2->3", "1->2->3"},
 		},
 		{
 			[]int{1, 2, 2, 3, 3, 3, 3, 4, 4},
-			[]string{"1->2->3->4","1->2->3->4","1->2->3","1->2->3","1->2->3"},
+			[]string{"1->2->3->4", "1->2->3->4", "1->2->3", "1->2->3", "1->2->3"},
 		},
 		{
 			[]int{1, 2, 2, 3, 3, 3, 3, 4, -1, -1, -1, 4},
-			[]string{"1->2->3->4","1->2->3","1->2->3->4","1->2->3"},
+			[]string{"1->2->3->4", "1->2->3", "1->2->3->4", "1->2->3"},
 		},
 		{
 			[]int{1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4},
-			[]string{"1->2->3->4","1->2->3->4","1->2->3->4","1->2->3->4","1->2->3->4","1->2->3->4","1->2->3->4","1->2->3->4"},
+			[]string{"1->2->3->4", "1->2->3->4", "1->2->3->4", "1->2->3->4", "1->2->3->4", "1->2->3->4", "1->2->3->4", "1->2->3->4"},
 		},
 		{
 			[]int{1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5},
-			[]string{"1->2->3->4->5","1->2->3->4","1->2->3->4","1->2->3->4","1->2->3->4","1->2->3->4","1->2->3->4","1->2->3->4"},
+			[]string{"1->2->3->4->5", "1->2->3->4", "1->2->3->4", "1->2->3->4", "1->2->3->4", "1->2->3->4", "1->2->3->4", "1->2->3->4"},
 		},
 		{
 			[]int{1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5},
-			[]string{"1->2->3->4->5","1->2->3->4->5","1->2->3->4","1->2->3->4","1->2->3->4","1->2->3->4","1->2->3->4","1->2->3->4","1->2->3->4"},
+			[]string{"1->2->3->4->5", "1->2->3->4->5", "1->2->3->4", "1->2->3->4", "1->2->3->4", "1->2->3->4", "1->2->3->4", "1->2->3->4", "1->2->3->4"},
 		},
 	}
 	for _, test := range tests {
 		root := ArrayToTree(test.nums)
-		result := binaryTreePaths(root)
-		fmt.Println(common.StringEqual(test.result ,result) )
+		result := binaryTreePathsEx(root)
+		fmt.Println(common.StringEqual(test.result, result))
 	}
 }

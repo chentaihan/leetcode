@@ -1,7 +1,5 @@
 package linkedTag
 
-import "github.com/chentaihan/leetcode/common"
-
 /**
 237. 删除链表中的节点
 请编写一个函数，使其可以删除某个链表中给定的（非末尾）节点，你将只被给定要求被删除的节点。
@@ -26,7 +24,7 @@ import "github.com/chentaihan/leetcode/common"
 不要从你的函数中返回任何结果。
  */
 
-func deleteNode(node *common.ListNode) {
+func deleteNode(node *ListNode) {
 	next := node.Next
 	node.Val = next.Val
 	node.Next = next.Next

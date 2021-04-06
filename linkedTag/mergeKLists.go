@@ -17,18 +17,6 @@ package linkedTag
 分析：两两合并
 */
 
-//func mergeKLists(lists []*ListNode) *ListNode {
-//	if len(lists) == 0 {
-//		return nil
-//	}
-//	if len(lists) == 1 {
-//		return lists[0]
-//	}
-//
-//	lists[1] = mergeList(lists[0], lists[1])
-//	return mergeKLists(lists[1:])
-//}
-
 func mergeKLists(lists []*ListNode) *ListNode {
 	if len(lists) == 0 {
 		return nil
