@@ -70,3 +70,24 @@ func getRightMax(root *TreeNode) int {
 	}
 	return root.Val
 }
+
+func minDiffInBSTEx(root *TreeNode) int {
+	var prev *TreeNode
+	minValue := 1<<63 - 1
+	var f func(root *TreeNode)
+	f = func(root *TreeNode) {
+		if root != nil {
+			f(root.Left)
+			if prev != nil {
+				value := root.Val - prev.Val
+				if value < minValue {
+					minValue = value
+				}
+			}
+			prev = root
+			f(root.Right)
+		}
+	}
+	f(root)
+	return minValue
+}

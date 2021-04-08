@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	treeTag.TestbinaryTreePaths()
+	treeTag.TestzigzagLevelOrder()
 }

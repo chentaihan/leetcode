@@ -23,3 +23,18 @@ func _postorder(root *NodeN, list *[]int) {
 		*list = append(*list, root.Val)
 	}
 }
+
+func postorderEx(root *NodeN) []int {
+	var list []int
+	var f func(root *NodeN)
+	f = func(root *NodeN) {
+		if root != nil {
+			for i := 0; i < len(root.Children); i++ {
+				f(root.Children[i])
+			}
+			list = append(list, root.Val)
+		}
+	}
+	f(root)
+	return list
+}

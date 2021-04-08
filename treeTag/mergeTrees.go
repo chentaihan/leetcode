@@ -1,8 +1,8 @@
 package treeTag
 
 import (
-	"github.com/chentaihan/leetcode/common"
 	"fmt"
+	"github.com/chentaihan/leetcode/common"
 )
 
 /**
@@ -29,7 +29,7 @@ N从1开始
 left = 2N
 right = 2N + 1
 将tree 2的值存入数组array，遍历数组array，将array中的值存入tree 1中，存在的累加，不存在的创建节点
- */
+*/
 func dlrMap(root *TreeNode, m map[int]int, index int) {
 	if root != nil {
 		m[index] = root.Val
@@ -76,7 +76,7 @@ func dlrTree(root *TreeNode, m map[int]int, index int) {
 
 /**
 第二版，打败40%
- */
+*/
 func mergeTrees1(t1 *TreeNode, t2 *TreeNode) *TreeNode {
 	if t1 == nil {
 		return t2
@@ -109,36 +109,34 @@ func mergeTrees1(t1 *TreeNode, t2 *TreeNode) *TreeNode {
 
 /**
 第三版，打败80%
- */
+*/
 func mergeTrees2(t1 *TreeNode, t2 *TreeNode) *TreeNode {
 	if t1 == nil {
 		return t2
+	} else if t2 == nil {
+		return t1
 	}
-	if t1 != nil {
-		var leftNode, rightNode *TreeNode
-		if t2 != nil {
-			t1.Val += t2.Val
-			leftNode = t2.Left
-			rightNode = t2.Right
-		}
-		if t1.Left == nil && leftNode != nil {
-			t1.Left = leftNode
-		} else {
-			mergeTrees2(t1.Left, leftNode)
-		}
 
-		if t1.Right == nil && rightNode != nil {
-			t1.Right = rightNode
-		} else {
-			mergeTrees2(t1.Right, rightNode)
-		}
+	t1.Val += t2.Val
+
+	if t1.Left == nil && t2.Left != nil {
+		t1.Left = t2.Left
+	} else {
+		mergeTrees2(t1.Left, t2.Left)
 	}
+
+	if t1.Right == nil && t2.Right != nil {
+		t1.Right = t2.Right
+	} else {
+		mergeTrees2(t1.Right, t2.Right)
+	}
+
 	return t1
 }
 
 /**
 膜拜版本
- */
+*/
 func mergeTrees3(t1 *TreeNode, t2 *TreeNode) *TreeNode {
 	if t2 == nil {
 		return t1

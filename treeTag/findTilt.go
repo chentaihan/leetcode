@@ -39,6 +39,27 @@ func TreeNodeValue(root *TreeNode) int {
 	return root.Val + TreeNodeValue(root.Left) + TreeNodeValue(root.Right)
 }
 
+func findTiltEx(root *TreeNode) int {
+	total := 0
+	var f func(root *TreeNode) int
+	f = func(root *TreeNode) int {
+		if root == nil {
+			return 0
+		}
+		left := f(root.Left)
+		right := f(root.Right)
+		if left > right {
+			total += left - right
+		} else {
+			total += right - left
+		}
+		return left + right + root.Val
+	}
+	f(root)
+	return total
+}
+
+
 func TestfindTilt() {
 	tests := []struct {
 		nums       []int

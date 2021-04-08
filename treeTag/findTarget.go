@@ -94,7 +94,7 @@ func findTargetEx1(root *TreeNode, k int, m map[int]bool) bool {
 func _findTargetEx(root *TreeNode, k int, m map[int]bool) bool {
 	if root != nil {
 		value := k - root.Val
-		if m[value] && m[root.Val]{
+		if m[value] && m[root.Val] {
 			if value == root.Val {
 				return (root.Left != nil && root.Val == root.Left.Val) || (root.Right != nil && root.Val == root.Right.Val)
 			}
@@ -105,6 +105,7 @@ func _findTargetEx(root *TreeNode, k int, m map[int]bool) bool {
 	}
 	return false
 }
+
 
 func TestfindTarget() {
 	tests := []struct {
@@ -118,7 +119,7 @@ func TestfindTarget() {
 			false,
 		},
 		{
-			[]int{5,3,6,2,4,-1,7},
+			[]int{5, 3, 6, 2, 4, -1, 7},
 			28,
 			false,
 		},
