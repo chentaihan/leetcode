@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/chentaihan/leetcode/sortTag"
+	"github.com/chentaihan/leetcode/linkedTag"
 )
 
 func main() {
-	sortTag.TestgetLeastNumbers()
+	linkedTag.TestmergeInBetween()
 }
