@@ -41,6 +41,58 @@ func _pathSum2(root *TreeNode, sum int, array []int, result *[][]int) {
 	}
 }
 
+func pathSum2Ex(root *TreeNode, sum int) [][]int {
+	var result [][]int
+	var f func(root *TreeNode, sum int, array []int)
+	f = func(root *TreeNode, sum int, array []int) {
+		if root == nil {
+			return
+		}
+		sum -= root.Val
+		array = append(array, root.Val)
+		switch {
+		case root.Left == nil && root.Right == nil:
+			if 0 == sum {
+				result = append(result, array)
+			}
+		case root.Left != nil && root.Right == nil:
+			f(root.Left, sum, array)
+		case root.Left == nil && root.Right != nil:
+			f(root.Right, sum, array)
+		default:
+			newArray := make([]int, len(array))
+			copy(newArray, array)
+			f(root.Left, sum, array)
+			f(root.Right, sum, newArray)
+		}
+	}
+	f(root, sum, nil)
+	return result
+}
+
+func pathSum2Xx(root *TreeNode, sum int) [][]int {
+	var result [][]int
+	var f func(root *TreeNode, sum int, array []int)
+	f = func(root *TreeNode, sum int, array []int) {
+		switch {
+		case root == nil:
+			return
+		case root.Left == nil && root.Right == nil:
+			if root.Val == sum {
+				newArray := make([]int, len(array))
+				copy(newArray, array)
+				result = append(result, append(newArray, root.Val))
+			}
+			return
+		}
+		array = append(array, root.Val)
+		f(root.Left, sum-root.Val, array)
+		f(root.Right, sum-root.Val, array)
+	}
+	f(root, sum, nil)
+	return result
+}
+
 func TestpathSum2() {
 	tests := []struct {
 		nums   []int
@@ -75,7 +127,7 @@ func TestpathSum2() {
 	}
 	for _, test := range tests {
 		root := ArrayToTree(test.nums)
-		result := pathSum2(root, test.sum)
+		result := pathSum2Xx(root, test.sum)
 		fmt.Println(common.IntEqualEx(result, test.result))
 	}
 }

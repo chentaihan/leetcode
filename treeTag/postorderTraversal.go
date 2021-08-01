@@ -24,7 +24,7 @@ package treeTag
  *     Right *TreeNode
  * }
  */
- 
+
 func postorderTraversal(root *TreeNode) []int {
 	var list []int
 	postorderTraversalUtil(root, &list)
@@ -37,4 +37,17 @@ func postorderTraversalUtil(root *TreeNode, list *[]int) {
 		postorderTraversalUtil(root.Right, list)
 		*list = append(*list, root.Val)
 	}
+}
+
+func postorderTraversalEx(root *TreeNode) []int {
+	var list []int
+	var f func(root *TreeNode)
+	f = func(root *TreeNode) {
+		if root != nil {
+			f(root.Left)
+			f(root.Right)
+			list = append(list, root.Val)
+		}
+	}
+	return list
 }

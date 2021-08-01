@@ -104,13 +104,14 @@ func isValidBSTEx(root *treeTag.TreeNode) bool {
 }
 
 func isValidBSTUtil(root *treeTag.TreeNode, min, max int) bool {
-	if root == nil {
+	switch {
+	case root == nil:
 		return true
-	}
-	if root.Val <= min || root.Val >= max {
+	case root.Val <= min || root.Val >= max:
 		return false
+	default:
+		return isValidBSTUtil(root.Left, min, root.Val) && isValidBSTUtil(root.Right, root.Val, max)
 	}
-	return isValidBSTUtil(root.Left, min, root.Val) && isValidBSTUtil(root.Right, root.Val, max)
 }
 
 func isValidBSTXX(root *treeTag.TreeNode) bool {

@@ -63,6 +63,24 @@ func sumNumbersUtil(root *TreeNode, value int, sum *int) {
 	}
 }
 
+func sumNumbersEx(root *TreeNode) int {
+	sum := 0
+	var f func(root *TreeNode, value int)
+	f = func(root *TreeNode, value int) {
+		if root == nil {
+			return
+		}
+		value = value*10 + root.Val
+		if root.Left == nil && root.Right == nil {
+			sum += value
+		}
+		f(root.Left, value)
+		f(root.Right, value)
+	}
+	f(root, 0)
+	return sum
+}
+
 func TestsumNumbers() {
 	tests := []struct {
 		list []int
@@ -107,7 +125,7 @@ func TestsumNumbers() {
 	}
 	for _, test := range tests {
 		head := ArrayToTree(test.list)
-		sum := sumNumbers(head)
+		sum := sumNumbersEx(head)
 
 		fmt.Println(sum == test.sum)
 	}

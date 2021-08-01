@@ -30,3 +30,4 @@ func rangeSumBST(root *TreeNode, L int, R int) int {
 	}
 	return result + rangeSumBST(root.Left, L, R) + rangeSumBST(root.Right, L, R)
 }
+

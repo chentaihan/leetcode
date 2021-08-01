@@ -4,7 +4,7 @@ import "fmt"
 
 /**
 671. 二叉树中第二小的节点
- */
+*/
 
 func findSecondMinimumValue(root *TreeNode) int {
 	if root == nil {
@@ -33,14 +33,49 @@ func findSecondMinimumValue(root *TreeNode) int {
 	return retVal
 }
 
+func findSecondMinimumValueEx(root *TreeNode) int {
+	first, second := -1, -1
+	var f func(root *TreeNode)
+	f = func(root *TreeNode) {
+		if root != nil {
+			if first == -1 {
+				first = root.Val
+			} else if second == -1 {
+				if first != root.Val {
+					if first < root.Val {
+						second = root.Val
+					} else {
+						second, first = first, root.Val
+					}
+				}
+			} else {
+				if root.Val < second && root.Val != first {
+					second = root.Val
+					if second < first {
+						first, second = second, first
+					}
+				}
+			}
+			f(root.Left)
+			f(root.Right)
+		}
+	}
+	f(root)
+	return second
+}
+
 func TestfindSecondMinimumValue() {
 	tests := []struct {
 		nums   []int
 		result int
 	}{
+		//{
+		//	[]int{1},
+		//	-1,
+		//},
 		{
-			[]int{1},
-			-1,
+			[]int{5, 8, 5},
+			8,
 		},
 		{
 			[]int{1, 2},
@@ -85,7 +120,7 @@ func TestfindSecondMinimumValue() {
 	}
 	for _, test := range tests {
 		root := ArrayToTree(test.nums)
-		result := findSecondMinimumValue(root)
+		result := findSecondMinimumValueEx(root)
 		fmt.Println(test.result == result)
 	}
 }

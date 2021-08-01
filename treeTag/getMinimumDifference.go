@@ -47,8 +47,8 @@ func _getMinimumDifference(root *TreeNode, minValue *int) {
 			for tmpNode.Right != nil {
 				tmpNode = tmpNode.Right
 			}
-			if root.Val- tmpNode.Val < *minValue {
-				*minValue = root.Val- tmpNode.Val
+			if root.Val-tmpNode.Val < *minValue {
+				*minValue = root.Val - tmpNode.Val
 			}
 		}
 
@@ -66,6 +66,31 @@ func _getMinimumDifference(root *TreeNode, minValue *int) {
 		_getMinimumDifference(root.Left, minValue)
 		_getMinimumDifference(root.Right, minValue)
 	}
+}
+
+func getMinimumDifferenceEx(root *TreeNode) int {
+	minValue := 1<<63 - 1
+	var prev *TreeNode
+	var f func(root *TreeNode)
+	f = func(root *TreeNode) {
+		if root == nil {
+			return
+		}
+		f(root.Left)
+		if prev != nil {
+			val := root.Val - prev.Val
+			if val < 0 {
+				val = prev.Val - root.Val
+			}
+			if val < minValue {
+				minValue = val
+			}
+		}
+		prev = root
+		f(root.Right)
+	}
+	f(root)
+	return minValue
 }
 
 func TestgetMinimumDifference() {
@@ -117,7 +142,7 @@ func TestgetMinimumDifference() {
 
 	for _, test := range tests {
 		root := ArrayToTree(test.value)
-		result := getMinimumDifference(root)
+		result := getMinimumDifferenceEx(root)
 		fmt.Println(result == test.result)
 	}
 }

@@ -1,8 +1,8 @@
 package treeTag
 
 import (
-	"github.com/chentaihan/leetcode/common"
 	"fmt"
+	"github.com/chentaihan/leetcode/common"
 )
 
 /**
@@ -26,7 +26,7 @@ Example 1:
      2  0
        \
         1
- */
+*/
 
 func constructMaximumBinaryTree(nums []int) *TreeNode {
 	if len(nums) == 0 {
@@ -49,6 +49,25 @@ func findMaxValue(nums []int, start, end int) int {
 		}
 	}
 	return index
+}
+
+func constructMaximumBinaryTreeEx(nums []int) *TreeNode {
+	if len(nums) == 0 {
+		return nil
+	}
+	index := 0
+	maxValue := nums[0]
+	for i := 1; i < len(nums); i++ {
+		if nums[i] > maxValue {
+			maxValue = nums[i]
+			index = i
+		}
+	}
+	return &TreeNode{
+		Val:   maxValue,
+		Left:  constructMaximumBinaryTreeEx(nums[:index]),
+		Right: constructMaximumBinaryTreeEx(nums[index+1:]),
+	}
 }
 
 func TestconstructMaximumBinaryTree() {
@@ -102,7 +121,7 @@ func TestconstructMaximumBinaryTree() {
 		},
 	}
 	for _, test := range tests {
-		root := constructMaximumBinaryTree(test.nums)
+		root := constructMaximumBinaryTreeEx(test.nums)
 		result := TreeFloor(root)
 		fmt.Println(common.IntEqual(test.result, result))
 	}

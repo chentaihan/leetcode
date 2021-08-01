@@ -39,3 +39,17 @@ func _maxDepthN(root *NodeN, level int, maxLevel *int) {
 		}
 	}
 }
+
+func maxDepthNEx(root *NodeN) int {
+	if root == nil {
+		return 0
+	}
+	maxValue := 0
+	for i := 0; i < len(root.Children); i++ {
+		value := maxDepthNEx(root.Children[i])
+		if maxValue < value {
+			 maxValue = value
+		}
+	}
+	return maxValue + 1
+}
