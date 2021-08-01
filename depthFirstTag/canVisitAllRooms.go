@@ -40,7 +40,7 @@ package depthFirstTag
 
 func canVisitAllRooms(rooms [][]int) bool {
 	n := len(rooms)
-	result := make([]int, n)
+	//result := make([]int, n)
 	flag := make([]int, n)
 	count := 1
 	list := rooms[0]
@@ -52,4 +52,5 @@ func canVisitAllRooms(rooms [][]int) bool {
 		flag[list[i]] = 1
 		count++
 	}
+	return false
 }

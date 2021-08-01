@@ -133,7 +133,7 @@ func TestMinStackConstructor() {
 		},
 	}
 	for _, test := range tests {
-		stack := MinStackConstructor()
+		stack := &minStackXX{}
 		for _, item := range test.list {
 			stack.Push(item)
 		}
@@ -155,11 +155,49 @@ func TestMinStackConstructor() {
 	}
 }
 
-/**
- * Your MinStack object will be instantiated and called as such:
- * obj := Constructor();
- * obj.Push(x);
- * obj.Pop();
- * param_3 := obj.Top();
- * param_4 := obj.GetMin();
- */
+type minStackXX struct {
+	stack []item
+}
+
+type item struct {
+	val    int
+	minVal int
+}
+
+func (ms *minStackXX) Push(val int) {
+	if len(ms.stack) == 0 {
+		ms.stack = append(ms.stack, item{val, val})
+	} else {
+		minValue := ms.stack[len(ms.stack)-1].minVal
+		if val < minValue {
+			minValue = val
+		}
+		ms.stack = append(ms.stack, item{val, minValue})
+	}
+}
+
+func (ms *minStackXX) Pop() {
+	if len(ms.stack) == 0 {
+		return
+	}
+	ms.stack = ms.stack[:len(ms.stack)-1]
+}
+
+func (ms *minStackXX) Top() int {
+	if len(ms.stack) == 0 {
+		return -1
+	}
+	return ms.stack[len(ms.stack)-1].val
+}
+
+func (ms *minStackXX) GetMin() int {
+	if len(ms.stack) == 0 {
+		return -1
+	}
+	return ms.stack[len(ms.stack)-1].minVal
+}
+
+// push(x) -- 将元素 x 推入栈中。
+// pop() -- 删除栈顶的元素。
+// top() -- 获取栈顶元素。
+// getMin() -- 检索栈中的最小元素。

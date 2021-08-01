@@ -76,7 +76,7 @@ func isValidBST(root *treeTag.TreeNode) bool {
 		return true
 	}
 
-	if root.Left != nil  {
+	if root.Left != nil {
 		if root.Val <= root.Left.Val {
 			return false
 		}
@@ -86,8 +86,8 @@ func isValidBST(root *treeTag.TreeNode) bool {
 		}
 	}
 
-	if root.Right != nil  {
-		if root.Val >= root.Right.Val  {
+	if root.Right != nil {
+		if root.Val >= root.Right.Val {
 			return false
 		}
 		node := MinNode(root.Right)
@@ -99,12 +99,11 @@ func isValidBST(root *treeTag.TreeNode) bool {
 	return isValidBST(root.Left) && isValidBST(root.Right)
 }
 
-
 func isValidBSTEx(root *treeTag.TreeNode) bool {
 	return isValidBSTUtil(root, math.MinInt64, math.MaxInt64)
 }
 
-func isValidBSTUtil(root *treeTag.TreeNode, min,max int) bool{
+func isValidBSTUtil(root *treeTag.TreeNode, min, max int) bool {
 	if root == nil {
 		return true
 	}
@@ -114,6 +113,23 @@ func isValidBSTUtil(root *treeTag.TreeNode, min,max int) bool{
 	return isValidBSTUtil(root.Left, min, root.Val) && isValidBSTUtil(root.Right, root.Val, max)
 }
 
+func isValidBSTXX(root *treeTag.TreeNode) bool {
+	var f func(root *treeTag.TreeNode, min int)
+	result := true
+	min := math.MinInt64
+	f = func(root *treeTag.TreeNode, min int) {
+		if root != nil {
+			f(root.Left, min)
+			if root.Val <= min {
+				result = false
+				return
+			}
+			f(root.Right, root.Val)
+		}
+	}
+	f(root, min)
+	return result
+}
 
 func TestisValidBST() {
 	tests := []struct {
@@ -151,7 +167,7 @@ func TestisValidBST() {
 	}
 	for _, test := range tests {
 		root := treeTag.ArrayToTree(test.nums)
-		val := isValidBSTEx(root)
+		val := isValidBSTXX(root)
 		fmt.Println(test.result == val)
 	}
 }

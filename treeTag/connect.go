@@ -41,7 +41,7 @@ func connect(root *Node) *Node {
 	for node := root; node != nil; node = node.Right {
 		count++
 	}
-	list := make([]*Node, 1<<count)
+	list := make([]*Node, 1<<uint64(count))
 	connectSave(root, &list, 1)
 	value := 1
 	for i := 1; i < len(list); i++ {

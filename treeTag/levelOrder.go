@@ -2,11 +2,11 @@ package treeTag
 
 /**
 102. 二叉树的层次遍历
- */
+*/
 
 import (
-	"github.com/chentaihan/leetcode/common"
 	"fmt"
+	"github.com/chentaihan/leetcode/common"
 )
 
 func levelOrder(root *TreeNode) [][]int {
@@ -26,11 +26,28 @@ func levelOrder(root *TreeNode) [][]int {
 		}
 		if level >= len(ret) {
 			ret = append(ret, []int{node.Val})
-		}else{
+		} else {
 			ret[level] = append(ret[level], node.Val)
 		}
 	}
 	return ret
+}
+
+func levelOrderEx(root *TreeNode) [][]int {
+	var list [][]int
+	_levelOrderEx(root, &list, 0)
+	return list
+}
+
+func _levelOrderEx(root *TreeNode, list *[][]int, level int) {
+	if root != nil {
+		for len(*list) <= level {
+			*list = append(*list, []int{})
+		}
+		(*list)[level] = append((*list)[level], root.Val)
+		_levelOrderEx(root.Left, list, level+1)
+		_levelOrderEx(root.Right, list, level+1)
+	}
 }
 
 func TestlevelOrder() {
@@ -83,13 +100,13 @@ func TestlevelOrder() {
 			[][]int{{7}, {3, 15}, {1, 4, 9, 20}},
 		},
 		{
-			[]int{7, 3, 15, 9, 20, 1, 4,30},
-			[][]int{{7}, {3, 15}, {1, 4, 9, 20},{30}},
+			[]int{7, 3, 15, 9, 20, 1, 4, 30},
+			[][]int{{7}, {3, 15}, {1, 4, 9, 20}, {30}},
 		},
 	}
 	for _, test := range tests {
 		root := CreateTree(test.nums)
-		ret := levelOrder(root)
+		ret := levelOrderEx(root)
 		for index, list := range ret {
 			fmt.Println(common.IntEqual(test.result[index], list))
 		}

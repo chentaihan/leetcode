@@ -32,6 +32,30 @@ func binaryTreePaths(root *TreeNode) []string {
 	return rest
 }
 
+func binaryTreePathsEx(root *TreeNode) []string {
+	if root == nil {
+		return []string{}
+	}
+	var list []string
+	_binaryTreePathsEx(root, &list, "")
+	return list
+}
+
+func _binaryTreePathsEx(root *TreeNode, list *[]string, path string) {
+	if root != nil {
+		path += strconv.Itoa(root.Val)
+		if root.Left == nil && root.Right == nil {
+			*list = append(*list, path)
+		}
+		if root.Left != nil {
+			_binaryTreePathsEx(root.Left, list, path+"->")
+		}
+		if root.Right != nil {
+			_binaryTreePathsEx(root.Right, list, path+"->")
+		}
+	}
+}
+
 func TestbinaryTreePaths(){
 	tests := []struct {
 		nums       []int
@@ -92,7 +116,7 @@ func TestbinaryTreePaths(){
 	}
 	for _, test := range tests {
 		root := ArrayToTree(test.nums)
-		result := binaryTreePaths(root)
+		result := binaryTreePathsEx(root)
 		fmt.Println(common.StringEqual(test.result ,result) )
 	}
 }

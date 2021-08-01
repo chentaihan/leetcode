@@ -16,7 +16,7 @@ package dynamicTag
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/maximum-subarray
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
+*/
 
 func maxSubArrayEx(nums []int) int {
 	if len(nums) == 0 {
@@ -31,6 +31,24 @@ func maxSubArrayEx(nums []int) int {
 			sum += nums[i]
 		}
 		if sum > max {
+			max = sum
+		}
+	}
+	return max
+}
+
+func maxSubArrayXx(nums []int) int {
+	if len(nums) == 0 {
+		return -1
+	}
+	sum, max := nums[0], nums[0]
+	for i := 1; i < len(nums); i++ {
+		if sum < 0 {
+			sum = nums[i]
+		} else {
+			sum += nums[i]
+		}
+		if max < sum {
 			max = sum
 		}
 	}

@@ -45,6 +45,27 @@ func lengthOfLIS(nums []int) int {
 	return max + 1
 }
 
+func lengthOfLISEx(nums []int) int {
+	if len(nums) == 0 {
+		return 0
+	}
+	max := 0
+	buf := make([]int, len(nums))
+	for i := 1; i < len(nums); i++ {
+		count := 0
+		for j := 0; j < i; j++ {
+			if nums[i] > nums[j] && buf[j] >= count {
+				count = buf[j] + 1
+			}
+		}
+		buf[i] = count
+		if count > max {
+			max = count
+		}
+	}
+	return max + 1
+}
+
 func TestlengthOfLIS() {
 	tests := []struct {
 		nums []int
@@ -84,7 +105,7 @@ func TestlengthOfLIS() {
 		},
 	}
 	for _, test := range tests {
-		max := lengthOfLIS(test.nums)
+		max := lengthOfLISEx(test.nums)
 		fmt.Println(max, test.max)
 	}
 }

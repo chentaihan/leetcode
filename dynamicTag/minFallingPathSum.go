@@ -58,6 +58,33 @@ func minFallingPathSum(A [][]int) int {
 	return min
 }
 
+func minFallingPathSumEx(A [][]int) int {
+	if len(A) == 0 || len(A[0]) == 0 {
+		return 0
+	}
+
+	for row := 1; row < len(A); row++ {
+		for col := 0; col < len(A[0]); col++ {
+			min := A[row-1][col]
+			if col > 0 && A[row-1][col-1] < min {
+				min = A[row-1][col-1]
+			}
+			if col < len(A[0])-1 && A[row-1][col+1] < min {
+				min = A[row-1][col+1]
+			}
+			A[row][col] += min
+		}
+	}
+	sum := A[len(A)-1]
+	min := sum[0]
+	for i := 1; i < len(sum); i++ {
+		if sum[i] < min {
+			min = sum[i]
+		}
+	}
+	return min
+}
+
 func TestminFallingPathSum() {
 	tests := []struct {
 		A   [][]int
@@ -94,7 +121,7 @@ func TestminFallingPathSum() {
 	}
 
 	for _, test := range tests {
-		result := minFallingPathSum(test.A)
+		result := minFallingPathSumEx(test.A)
 		fmt.Println(result == test.min)
 	}
 }

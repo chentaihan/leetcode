@@ -109,6 +109,18 @@ func arrayToList(array []int) *ListNode {
 	return head
 }
 
+func sortedListToBSTXX(nums []int) *treeTag.TreeNode {
+	if len(nums) == 0 {
+		return nil
+	}
+	mid := len(nums) / 2
+	return &treeTag.TreeNode{
+		Val:   nums[mid],
+		Left:  sortedListToBSTXX(nums[:mid]),
+		Right: sortedListToBSTXX(nums[mid+1:]),
+	}
+}
+
 func TestsortedListToBST() {
 	tests := []struct {
 		list []int
@@ -160,8 +172,8 @@ func TestsortedListToBST() {
 		},
 	}
 	for _, test := range tests {
-		head := arrayToList(test.list)
-		root := sortedListToBSTEx(head)
+		//head := arrayToList(test.list)
+		root := sortedListToBSTXX(test.list)
 		array := treeTag.TreeFloor(root)
 		fmt.Println(array)
 	}

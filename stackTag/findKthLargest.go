@@ -20,9 +20,8 @@ import "fmt"
 // 你可以假设 k 总是有效的，且 1 ≤ k ≤ 数组的长度。
 //
 
-
 func topK(nums []int, k int) int {
-	index := findTopk(nums, 0, len(nums)-1)
+	index := findTopkEx(nums, 0, len(nums)-1)
 	if index+1 == k {
 		return nums[index]
 	}
@@ -53,6 +52,30 @@ func findTopk(nums []int, start, end int) int {
 				nums[index-1], nums[start] = nums[start], nums[index-1]
 			}
 			return index - 1
+		}
+	}
+	return index
+}
+
+func findTopkEx(nums []int, start, end int) int {
+	index := start
+	key := nums[start]
+	for {
+		for index < end && nums[end] < key {
+			end--
+		}
+		for index <= end && nums[index] >= key {
+			index++
+		}
+
+		if index < end {
+			nums[index], nums[end] = nums[end], nums[index]
+			index++
+			end--
+		} else {
+			index--
+			nums[index], nums[start] = nums[start], nums[index]
+			return index
 		}
 	}
 	return index
@@ -217,9 +240,6 @@ func TestTopk() {
 		fmt.Println(result == test.result)
 	}
 }
-
-
-
 
 func findKthLargest(nums []int, k int) int {
 	buffer := make([]int, k)

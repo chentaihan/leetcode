@@ -49,6 +49,25 @@ func uniquePaths(m int, n int) int {
 	return buffer[n-1][m-1]
 }
 
+func uniquePathsEx(m int, n int) int {
+	if m <= 0 || n <= 0 {
+		return 0
+	}
+	buf := make([][]int, m)
+	for i := 0; i < m; i++ {
+		buf[i] = make([]int, n)
+		buf[i][0] = 1
+	}
+
+	for col :=1; col < n; col++ {
+		buf[0][col] = 1
+		for row := 1; row < m; row++ {
+			buf[row][col] = buf[row-1][col] + buf[row][col-1]
+		}
+	}
+	return buf[m-1][n-1]
+}
+
 func TestuniquePaths() {
 	tests := []struct {
 		m   int
@@ -61,6 +80,25 @@ func TestuniquePaths() {
 			3,
 		},
 		{
+			2,
+			2,
+			2,
+		},
+		{
+			1,
+			2,
+			1,
+		},
+		{
+			3,
+			3,
+			6,
+		},{
+			4,
+			4,
+			20,
+		},
+		{
 			7,
 			3,
 			28,
@@ -68,6 +106,6 @@ func TestuniquePaths() {
 	}
 
 	for _, test := range tests {
-		fmt.Println(uniquePaths(test.m, test.n) == test.ret)
+		fmt.Println(uniquePathsEx(test.m, test.n) == test.ret)
 	}
 }

@@ -31,7 +31,7 @@ func isSubsequence(s string, t string) bool {
 	if len(s) == 0 {
 		return true
 	}
-	if  len(s) > len(t) {
+	if len(s) > len(t) {
 		return false
 	}
 	tIndex := 0
@@ -49,4 +49,17 @@ func isSubsequence(s string, t string) bool {
 		}
 	}
 	return true
+}
+
+func isSubsequenceEx(s string, t string) bool {
+	sIndex := 0
+	for tIndex := 0; tIndex < len(t) && sIndex < len(s); tIndex++ {
+		if s[sIndex] == t[tIndex] {
+			sIndex++
+			if sIndex == len(s) {
+				return true
+			}
+		}
+	}
+	return sIndex == len(s)
 }
