@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/chentaihan/leetcode/treeTag"
+	"github.com/chentaihan/leetcode/dynamicTag"
 )
 
 func main() {
-	treeTag.TestmaxPathSum()
+	dynamicTag.TestRob1()
 }

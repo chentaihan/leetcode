@@ -38,9 +38,12 @@ func rob(nums []int) int {
 		return max(nums[0], nums[1])
 	}
 	dp := make([]int, len(nums))
-	m := max(nums[0], nums[1])
-	dp[0] = m
-	dp[1] = m
+	dp[0] = nums[0]
+	if nums[0] < nums[1] {
+		dp[1] = nums[1]
+	} else {
+		dp[1] = nums[0]
+	}
 	for i := 2; i < len(nums); i++ {
 		dp[i] = max(dp[i-2]+nums[i], dp[i-1])
 	}
@@ -78,6 +81,6 @@ func TestRob() {
 	}
 	for _, test := range tests {
 		res := rob(test.nums)
-		fmt.Println(res, test.res)
+		fmt.Println(res == test.res)
 	}
 }
