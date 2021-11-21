@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/chentaihan/leetcode/dynamicTag"
+	"github.com/chentaihan/leetcode/backtrackTag"
 )
 
 func main() {
-	dynamicTag.TestRob1()
+	backtrackTag.TestgenerateParenthesis()
 }
