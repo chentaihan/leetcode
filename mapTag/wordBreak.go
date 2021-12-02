@@ -2,7 +2,6 @@ package mapTag
 
 import (
 	"fmt"
-	"strings"
 )
 
 /**
@@ -35,18 +34,21 @@ import (
 */
 
 func wordBreak(s string, wordDict []string) bool {
-	if s == "" {
-		return true
-	}
+	dp := make([]bool, len(s)+1)
+	dp[0] = true
+	dict := make(map[string]bool, len(wordDict))
 	for i := 0; i < len(wordDict); i++ {
-		index := strings.Index(s, wordDict[i])
-		if index == 0 {
-			if wordBreak(s[len(wordDict[i]):], wordDict) {
-				return true
+		dict[wordDict[i]] = true
+	}
+	for i := 1; i <= len(s); i++ {
+		for j := 0; j < i; j++ {
+			if dp[j] && dict[s[j:i]] {
+				dp[i] = true
+				break
 			}
 		}
 	}
-	return false
+	return dp[len(s)]
 }
 
 func TestWordBreak() {
