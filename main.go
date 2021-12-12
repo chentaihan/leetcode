@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/chentaihan/leetcode/mapTag"
+	"github.com/chentaihan/leetcode/depthFirstTag"
 )
 
 func main() {
-	mapTag.TestwordBreak1()
+	depthFirstTag.TestnumBusesToDestination()
 }
