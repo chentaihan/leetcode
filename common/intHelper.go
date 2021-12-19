@@ -3,9 +3,6 @@ package common
 import "sort"
 
 func IntEqual(nums1, nums2 []int) bool {
-	if (nums1 == nil && nums2 != nil) || (nums1 != nil && nums2 == nil) {
-		return false
-	}
 	if len(nums1) != len(nums2) {
 		return false
 	}

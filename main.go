@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/chentaihan/leetcode/backtrackTag"
+	"github.com/chentaihan/leetcode/mapTag"
 )
 
 func main() {
-	backtrackTag.TestletterCombinations()
+	mapTag.TestshortestSeq()
 }
