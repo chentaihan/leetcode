@@ -8,7 +8,7 @@ import "fmt"
 
 请你返回从根到叶子节点的所有路径中 伪回文 路径的数目。
 
- 
+
 
 示例 1：
 
@@ -28,7 +28,7 @@ import "fmt"
 
 输入：root = [9]
 输出：1
- 
+
 提示：
 
 给定二叉树的节点数目在 1 到 10^5 之间。
@@ -40,33 +40,35 @@ import "fmt"
 */
 
 func pseudoPalindromicPaths(root *TreeNode) int {
-	var stack []*TreeNode
+	buf := make([]int, 10)
 	count := 0
-	buf := make([]int, 9)
-	_pseudoPalindromicPaths(root, &stack, buf, &count)
+	_pseudoPalindromicPaths(root, buf, &count)
 	return count
 }
 
-func _pseudoPalindromicPaths(root *TreeNode, stack *[]*TreeNode, buf []int, count *int) {
-	if root != nil {
-		*stack = append(*stack, root)
-		buf[root.Val]++
-		_pseudoPalindromicPaths(root.Left, stack, buf, count)
-		_pseudoPalindromicPaths(root.Right, stack, buf, count)
-		if root.Left == nil && root.Right == nil {
-			oddCount := 0
-			for i := 0; i < len(buf); i++ {
-				if buf[i]%2 == 1 {
-					oddCount++
-				}
-			}
-			if oddCount <= 1 {
-				*count++
-			}
-		}
-		buf[(*stack)[0].Val]--
-		*stack = (*stack)[:len(*stack)-1]
+func _pseudoPalindromicPaths(root *TreeNode, buf []int, count *int) {
+	if root == nil {
+		return
 	}
+	buf[root.Val]++
+	if root.Left == root.Right && isPalindromic(buf) {
+		*count++
+		buf[root.Val]--
+		return
+	}
+	_pseudoPalindromicPaths(root.Left, buf, count)
+	_pseudoPalindromicPaths(root.Right, buf, count)
+	buf[root.Val]--
+}
+
+func isPalindromic(buf []int) bool {
+	oneCount := 0
+	for i := 0; i < len(buf); i++ {
+		if buf[i]%2 == 1 {
+			oneCount++
+		}
+	}
+	return oneCount <= 1
 }
 
 func TestpseudoPalindromicPaths() {
