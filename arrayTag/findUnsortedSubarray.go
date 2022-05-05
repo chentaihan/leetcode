@@ -6,7 +6,7 @@ package arrayTag
 
 请你找出符合题意的 最短 子数组，并输出它的长度。
 
- 
+
 
 示例 1：
 
@@ -30,14 +30,15 @@ package arrayTag
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/shortest-unsorted-continuous-subarray
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
+*/
 
 func findUnsortedSubarray(nums []int) int {
-	min,max := nums[0],nums[0]
-	start,end := 0,0
-	for i := 1; i < len(nums); i++ {
-		if nums[i] < max {
-			start = i -1
-		}
-	}
+	//min,max := nums[0],nums[0]
+	//start,end := 0,0
+	//for i := 1; i < len(nums); i++ {
+	//	if nums[i] < max {
+	//		start = i -1
+	//	}
+	//}
+	return 0
 }

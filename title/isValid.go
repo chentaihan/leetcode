@@ -10,7 +10,7 @@ import "fmt"
 左括号必须用相同类型的右括号闭合。
 左括号必须以正确的顺序闭合。
 注意空字符串可被认为是有效字符串。
- */
+*/
 
 func indexChar(arr []rune, b rune) int {
 	for index, item := range arr {

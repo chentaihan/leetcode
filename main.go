@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	mapTag.TestminWindow()
+	mapTag.TestmaxLengthBetweenEqualCharacters()
 }
