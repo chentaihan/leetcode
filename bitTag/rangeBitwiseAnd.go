@@ -6,7 +6,7 @@ import "fmt"
 201. 数字范围按位与
 给定范围 [m, n]，其中 0 <= m <= n <= 2147483647，返回此范围内所有数字的按位与（包含 m, n 两端点）。
 
-示例 1: 
+示例 1:
 
 输入: [5,7]
 输出: 4
@@ -21,7 +21,7 @@ import "fmt"
 */
 
 func rangeBitwiseAnd(m int, n int) int {
-	if m <= 0 || n / 2 >= m {
+	if m <= 0 || n/2 >= m {
 		return 0
 	}
 	first, second := 0, 1

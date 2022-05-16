@@ -14,7 +14,7 @@ package mapTag
 
 输入：["cool","lock","cook"]
 输出：["c","o"]
- 
+
 
 提示：
 
@@ -28,14 +28,14 @@ A[i][j] 是小写字母
 */
 
 func commonChars(A []string) []string {
-	constStr := []string{"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"}
+	constStr := []string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"}
 	arrA := make([][26]int, len(A))
 	for index, item := range A {
 		for _, c := range item {
 			arrA[index][c-'a']++
 		}
 	}
-	var result  []string
+	var result []string
 	for j := 0; j < 26; j++ {
 		min := 1<<63 - 1
 		for i := 0; i < len(arrA); i++ {

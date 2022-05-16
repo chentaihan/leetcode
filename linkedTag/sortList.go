@@ -2,7 +2,7 @@ package linkedTag
 
 /*
 148. 排序链表
-在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。
+在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。
 
 示例 1:
 
@@ -17,7 +17,7 @@ package linkedTag
 链接：https://leetcode-cn.com/problems/sort-list
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 分析：链表快排
- */
+*/
 
 func sortList(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {

@@ -26,8 +26,8 @@ small = [4]
 输出: []
 提示：
 
-big.length <= 100000
-1 <= small.length <= 100000
+big.length <= 100000
+1 <= small.length <= 100000
 
 
 来源：力扣（LeetCode）

@@ -12,11 +12,11 @@ package dynamicTag
    [6,5,7],
   [4,1,8,3]
 ]
-自顶向下的最小路径和为 11（即，2 + 3 + 5 + 1 = 11）。
+自顶向下的最小路径和为 11（即，2 + 3 + 5 + 1 = 11）。
 
 说明：
 
-如果你可以只使用 O(n) 的额外空间（n 为三角形的总行数）来解决这个问题，那么你的算法会很加分。
+如果你可以只使用 O(n) 的额外空间（n 为三角形的总行数）来解决这个问题，那么你的算法会很加分。
 
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/triangle
@@ -25,7 +25,7 @@ package dynamicTag
 
 func minimumTotal(triangle [][]int) int {
 	row := len(triangle)
-	if row == 0  || len(triangle[0]) == 0{
+	if row == 0 || len(triangle[0]) == 0 {
 		return 0
 	}
 	for rIndex := row - 2; rIndex >= 0; rIndex-- {
@@ -35,4 +35,3 @@ func minimumTotal(triangle [][]int) int {
 	}
 	return triangle[0][0]
 }
-

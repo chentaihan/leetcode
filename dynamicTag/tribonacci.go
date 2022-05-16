@@ -2,13 +2,13 @@ package dynamicTag
 
 /**
 1137. 第 N 个泰波那契数
-泰波那契序列 Tn 定义如下： 
+泰波那契序列 Tn 定义如下：
 
-T0 = 0, T1 = 1, T2 = 1, 且在 n >= 0 的条件下 Tn+3 = Tn + Tn+1 + Tn+2
+T0 = 0, T1 = 1, T2 = 1, 且在 n >= 0 的条件下 Tn+3 = Tn + Tn+1 + Tn+2
 
-给你整数 n，请返回第 n 个泰波那契数 Tn 的值。
+给你整数 n，请返回第 n 个泰波那契数 Tn 的值。
 
- 
+
 
 示例 1：
 
@@ -21,17 +21,17 @@ T_4 = 1 + 1 + 2 = 4
 
 输入：n = 25
 输出：1389537
- 
+
 
 提示：
 
 0 <= n <= 37
-答案保证是一个 32 位整数，即 answer <= 2^31 - 1。
+答案保证是一个 32 位整数，即 answer <= 2^31 - 1。
 
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/n-th-tribonacci-number
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
+*/
 
 func tribonacci(n int) int {
 	if n <= 1 {
@@ -40,7 +40,7 @@ func tribonacci(n int) int {
 	if n == 2 {
 		return 1
 	}
-	v0,v1,v2,result := 0,1,1,2
+	v0, v1, v2, result := 0, 1, 1, 2
 	for i := 3; i <= n; i++ {
 		result = v0 + v1 + v2
 		v0 = v1

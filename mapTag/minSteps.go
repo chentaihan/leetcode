@@ -2,9 +2,9 @@ package mapTag
 
 /**
 1347. 制造字母异位词的最小步骤数
-给你两个长度相等的字符串 s 和 t。每一个步骤中，你可以选择将 t 中的 任一字符 替换为 另一个字符。
+给你两个长度相等的字符串 s 和 t。每一个步骤中，你可以选择将 t 中的 任一字符 替换为 另一个字符。
 
-返回使 t 成为 s 的字母异位词的最小步骤数。
+返回使 t 成为 s 的字母异位词的最小步骤数。
 
 字母异位词 指字母相同，但排列不同（也可能相同）的字符串。
 
@@ -39,7 +39,7 @@ package mapTag
 
 1 <= s.length <= 50000
 s.length == t.length
-s 和 t 只包含小写英文字母
+s 和 t 只包含小写英文字母
 
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/minimum-number-of-steps-to-make-two-strings-anagram

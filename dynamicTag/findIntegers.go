@@ -3,7 +3,7 @@ package dynamicTag
 /*
 600. 不含连续1的非负整数
 
-给定一个正整数 n，找出小于或等于 n 的非负整数中，其二进制表示不包含 连续的1 的个数。
+给定一个正整数 n，找出小于或等于 n 的非负整数中，其二进制表示不包含 连续的1 的个数。
 
 示例 1:
 
@@ -19,7 +19,7 @@ package dynamicTag
 5 : 101
 其中，只有整数3违反规则（有两个连续的1），其他5个满足规则。
 说明: 1 <= n <= 10 << 9
- */
+*/
 
 func findIntegers(num int) int {
 	newNum := num
@@ -51,7 +51,7 @@ func findIntegers(num int) int {
 				continue
 			}
 			if i+1 < l && buffer[i+1] == 1 {
-				isok  = false
+				isok = false
 				break
 			}
 		}

@@ -16,19 +16,19 @@ import "fmt"
 输出: 1
 解释: 6是最大的整数, 对于数组中的其他整数,
 6大于数组中其他元素的两倍。6的索引是1, 所以我们返回1.
- 
+
 
 示例 2:
 
 输入: nums = [1, 2, 3, 4]
 输出: -1
 解释: 4没有超过3的两倍大, 所以我们返回 -1.
- 
+
 
 提示:
 
-nums 的长度范围在[1, 50].
-每个 nums[i] 的整数范围在 [0, 100].
+nums 的长度范围在[1, 50].
+每个 nums[i] 的整数范围在 [0, 100].
 
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others

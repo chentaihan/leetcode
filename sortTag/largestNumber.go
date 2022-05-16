@@ -13,7 +13,7 @@ import (
 
 输入: [10,2]
 输出: 210
-示例 2:
+示例 2:
 
 输入: [3,30,34,5,9]
 输出: 9534330
@@ -34,7 +34,7 @@ func (p bytesSlice) Less(i, j int) bool {
 		iIndex++
 		jIndex++
 	}
-	if len(p[i]) < len(p[j]) && p[j][0] < p[j][jIndex]  {
+	if len(p[i]) < len(p[j]) && p[j][0] < p[j][jIndex] {
 		return false
 	}
 	if len(p[i]) > len(p[j]) && p[i][iIndex] >= p[i][0] {
@@ -102,7 +102,7 @@ func TestlargestNumber() {
 			"9534330",
 		},
 		{
-			[]int{12,121},
+			[]int{12, 121},
 			"12121",
 		},
 	}

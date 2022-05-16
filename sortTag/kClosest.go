@@ -10,7 +10,7 @@ import "sort"
 
 你可以按任何顺序返回答案。除了点坐标的顺序之外，答案确保是唯一的。
 
- 
+
 
 示例 1：
 
@@ -26,7 +26,7 @@ import "sort"
 输入：points = [[3,3],[5,-1],[-2,4]], K = 2
 输出：[[3,3],[-2,4]]
 （答案 [[-2,4],[3,3]] 也会被接受。）
- 
+
 
 提示：
 
@@ -37,10 +37,10 @@ import "sort"
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/k-closest-points-to-origin
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
+*/
 
 type square struct {
-	sum int
+	sum   int
 	index int
 }
 

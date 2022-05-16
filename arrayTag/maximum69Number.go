@@ -4,13 +4,13 @@ import "fmt"
 
 /**
 1323. 6 和 9 组成的最大数字
-给你一个仅由数字 6 和 9 组成的正整数 num。
+给你一个仅由数字 6 和 9 组成的正整数 num。
 
-你最多只能翻转一位数字，将 6 变成 9，或者把 9 变成 6 。
+你最多只能翻转一位数字，将 6 变成 9，或者把 9 变成 6 。
 
 请返回你可以得到的最大数字。
 
- 
+
 
 示例 1：
 
@@ -32,12 +32,12 @@ import "fmt"
 输入：num = 9999
 输出：9999
 解释：无需改变就已经是最大的数字了。
- 
+
 
 提示：
 
 1 <= num <= 10^4
-num 每一位上的数字都是 6 或者 9 。
+num 每一位上的数字都是 6 或者 9 。
 
 
 来源：力扣（LeetCode）
@@ -139,7 +139,7 @@ func Testmaximum69Number() {
 		},
 	}
 
-	for _,test := range tests {
+	for _, test := range tests {
 		res := maximum69Number(test.num)
 		fmt.Println(res == test.res)
 	}

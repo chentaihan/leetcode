@@ -4,9 +4,9 @@ import "fmt"
 
 /**
 1304. 和为零的N个唯一整数
-给你一个整数 n，请你返回 任意 一个由 n 个 各不相同 的整数组成的数组，并且这 n 个数相加和为 0 。
+给你一个整数 n，请你返回 任意 一个由 n 个 各不相同 的整数组成的数组，并且这 n 个数相加和为 0 。
 
- 
+
 
 示例 1：
 
@@ -21,7 +21,7 @@ import "fmt"
 
 输入：n = 1
 输出：[0]
- 
+
 
 提示：
 
@@ -54,10 +54,9 @@ func TestsumZero() {
 	for i := 1; i < 20; i++ {
 		array := sumZero(i)
 		sum := 0
-		for i := 0 ; i < len(array); i++ {
+		for i := 0; i < len(array); i++ {
 			sum += array[i]
 		}
 		fmt.Println(sum == 0)
 	}
 }
-

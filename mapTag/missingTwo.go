@@ -16,7 +16,7 @@ package mapTag
 输出: [1,4]
 提示：
 
-nums.length <= 30000
+nums.length <= 30000
 
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/missing-two-lcci

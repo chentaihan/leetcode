@@ -9,7 +9,7 @@ package dynamicTag
 
 子数组 是数组中的一个连续序列。
 
- 
+
 
 示例 1：
 
@@ -20,7 +20,7 @@ package dynamicTag
 
 输入：nums = [1]
 输出：0
- 
+
 
 提示：
 
@@ -30,15 +30,15 @@ package dynamicTag
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/arithmetic-slices
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
+*/
 
 func numberOfArithmeticSlices(nums []int) int {
 	if len(nums) < 3 {
 		return 0
 	}
-	result, count := 0,0
+	result, count := 0, 0
 	for i := 2; i < len(nums); i++ {
-		if nums[i] - nums[i-1] == nums[i-1]-nums[i-2] {
+		if nums[i]-nums[i-1] == nums[i-1]-nums[i-2] {
 			count++
 			result += count
 		} else {

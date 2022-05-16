@@ -10,7 +10,7 @@ import "fmt"
 
 你设计的解决方案必须满足 O(log n) 时间复杂度和 O(1) 空间复杂度。
 
- 
+
 
 示例 1:
 
@@ -20,12 +20,12 @@ import "fmt"
 
 输入: nums =  [3,3,7,7,10,11,11]
 输出: 10
- 
+
 
 提示:
 
 1 <= nums.length <= 105
-0 <= nums[i] <= 105
+0 <= nums[i] <= 105
 
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/single-element-in-a-sorted-array
@@ -68,7 +68,7 @@ func TestsingleNonDuplicate() {
 			[]int{1, 1, 2}, 2,
 		},
 		{
-			[]int{ 2}, 2,
+			[]int{2}, 2,
 		},
 		{
 			[]int{1, 2, 2}, 1,

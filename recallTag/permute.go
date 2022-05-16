@@ -29,9 +29,22 @@ func permute(nums []int) [][]int {
 		return [][]int{}
 	}
 	var result [][]int
-	var list []int
-	_permute(nums, &result, &list)
+	permuteUtil(nums, 0, &result)
 	return result
+}
+
+func permuteUtil(nums []int, index int, result *[][]int) {
+	if index == len(nums) {
+		array := make([]int, len(nums))
+		copy(array, nums)
+		*result = append(*result, array)
+		return
+	}
+	for i := index; i < len(nums); i++ {
+		nums[i], nums[index] = nums[index], nums[i]
+		permuteUtil(nums, index+1, result)
+		nums[i], nums[index] = nums[index], nums[i]
+	}
 }
 
 func _permute(nums []int, result *[][]int, list *[]int) {

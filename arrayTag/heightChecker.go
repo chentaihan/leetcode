@@ -14,7 +14,7 @@ import "sort"
 输出：3
 解释：
 高度为 4、3 和最后一个 1 的学生，没有站在正确的位置。
- 
+
 
 提示：
 
@@ -24,14 +24,14 @@ import "sort"
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/height-checker
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
+*/
 
 func heightChecker(heights []int) int {
 	h := make([]int, len(heights))
 	copy(h, heights)
 	sort.Ints(h)
 	count := 0
-	for i := 0; i < len(h); i++{
+	for i := 0; i < len(h); i++ {
 		if h[i] != heights[i] {
 			count++
 		}

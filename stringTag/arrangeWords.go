@@ -15,7 +15,7 @@ text 中的每个单词都用单个空格分隔。
 
 请同样按上述格式返回新的句子。
 
- 
+
 
 示例 1：
 
@@ -37,7 +37,7 @@ text 中的每个单词都用单个空格分隔。
 
 输入：text = "To be or not to be"
 输出："To be or to be not"
- 
+
 
 提示：
 
@@ -66,7 +66,7 @@ func arrangeWords(text string) string {
 				i = j
 				break
 			} else if j == len(text)-1 {
-				array = append(array,item{ text[i:], len(array)})
+				array = append(array, item{text[i:], len(array)})
 				i = j
 				break
 			}

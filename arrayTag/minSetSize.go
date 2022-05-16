@@ -4,11 +4,11 @@ import "sort"
 
 /**
 1338. 数组大小减半
-给你一个整数数组 arr。你可以从中选出一个整数集合，并删除这些整数在数组中的每次出现。
+给你一个整数数组 arr。你可以从中选出一个整数集合，并删除这些整数在数组中的每次出现。
 
-返回 至少 能删除数组中的一半整数的整数集合的最小大小。
+返回 至少 能删除数组中的一半整数的整数集合的最小大小。
 
- 
+
 
 示例 1：
 
@@ -34,34 +34,34 @@ import "sort"
 
 输入：arr = [1,2,3,4,5,6,7,8,9,10]
 输出：5
- 
+
 
 提示：
 
 1 <= arr.length <= 10^5
-arr.length 为偶数
+arr.length 为偶数
 1 <= arr[i] <= 10^5
 
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/reduce-array-size-to-the-half
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
+*/
 
 func minSetSize(arr []int) int {
 	m := make(map[int]int, 0)
-	for i := 0;i < len(arr); i++ {
+	for i := 0; i < len(arr); i++ {
 		m[arr[i]]++
 	}
 	list := make([]int, len(m))
 	index := 0
-	for _,val := range m {
+	for _, val := range m {
 		list[index] = val
 		index++
 	}
-	sort.Ints(list)  //排序其实只用排一半的数
-	l := len(arr)/2
+	sort.Ints(list) //排序其实只用排一半的数
+	l := len(arr) / 2
 	sum := 0
-	for i := len(list)-1; i >= 0; i-- {
+	for i := len(list) - 1; i >= 0; i-- {
 		sum += list[i]
 		if sum >= l {
 			return len(list) - i

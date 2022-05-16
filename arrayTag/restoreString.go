@@ -8,7 +8,7 @@ package arrayTag
 
 返回重新排列后的字符串。
 
- 
+
 
 示例 1：
 
@@ -34,25 +34,25 @@ package arrayTag
 
 输入：s = "art", indices = [1,0,2]
 输出："rat"
- 
+
 
 提示：
 
 s.length == indices.length == n
 1 <= n <= 100
 s 仅包含小写英文字母。
-0 <= indices[i] < n
+0 <= indices[i] < n
 indices 的所有的值都是唯一的（也就是说，indices 是整数 0 到 n - 1 形成的一组排列）。
 
 
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/shuffle-string
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
+*/
 
 func restoreString(s string, indices []int) string {
 	result := make([]byte, len(s))
-	for i := 0; i < len(s);i++ {
+	for i := 0; i < len(s); i++ {
 		result[indices[i]] = s[i]
 	}
 	return string(result)

@@ -13,13 +13,13 @@ remove(value)：将给定值从哈希集合中删除。如果哈希集合中没�
 示例:
 
 MyHashSet hashSet = new MyHashSet();
-hashSet.add(1);        
-hashSet.add(2);        
+hashSet.add(1);
+hashSet.add(2);
 hashSet.contains(1);    // 返回 true
 hashSet.contains(3);    // 返回 false (未找到)
-hashSet.add(2);          
+hashSet.add(2);
 hashSet.contains(2);    // 返回 true
-hashSet.remove(2);          
+hashSet.remove(2);
 hashSet.contains(2);    // 返回  false (已经被删除)
 
 来源：力扣（LeetCode）
