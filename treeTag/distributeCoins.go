@@ -10,7 +10,7 @@ import "fmt"
 
 返回使每个结点上只有一枚硬币所需的移动次数。
 
- 
+
 
 示例 1：https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/01/19/tree1.png
 
@@ -38,7 +38,7 @@ import "fmt"
 
 输入：[1,0,0,null,3]
 输出：4
- 
+
 
 提示：
 
@@ -91,7 +91,6 @@ func TestdistributeCoins() {
 			[]int{1, 0, 2},
 			2,
 		},
-
 	}
 	for index, test := range tests {
 		root := ArrayToTree(test.nums)

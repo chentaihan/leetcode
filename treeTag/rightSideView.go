@@ -11,8 +11,8 @@ import (
 
 示例:
 
-输入: [1,2,3,null,5,null,4]
-输出: [1, 3, 4]
+输入: [1,2,3,null,5,null,4]
+输出: [1, 3, 4]
 解释:
 
    1            <---
@@ -129,8 +129,8 @@ func TestrightSideView() {
 			[]int{1, 2},
 		},
 		{
-			[]int{1,},
-			[]int{1,},
+			[]int{1},
+			[]int{1},
 		},
 	}
 	for _, test := range tests {

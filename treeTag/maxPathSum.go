@@ -12,7 +12,7 @@ import (
 
 给你一个二叉树的根节点 root ，返回其 最大路径和 。
 
- 
+
 
 示例 1：
 
@@ -26,7 +26,7 @@ import (
 输入：root = [-10,9,20,null,null,15,7]
 输出：42
 解释：最优路径是 15 -> 20 -> 7 ，路径和为 15 + 20 + 7 = 42
- 
+
 
 提示：
 
@@ -41,7 +41,7 @@ import (
 */
 
 func maxPathSum(root *TreeNode) int {
-	maxValue :=  -1 << 63
+	maxValue := -1 << 63
 	maxPathSumSub(root, &maxValue)
 	return maxValue
 }

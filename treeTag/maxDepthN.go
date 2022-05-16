@@ -6,7 +6,7 @@ package treeTag
 
 最大深度是指从根节点到最远叶子节点的最长路径上的节点总数。
 
-例如，给定一个 3叉树 :https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/10/12/narytreeexample.png
+例如，给定一个 3叉树 :https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/10/12/narytreeexample.png
 
 我们应返回其最大深度，3。
 
@@ -48,7 +48,7 @@ func maxDepthNEx(root *NodeN) int {
 	for i := 0; i < len(root.Children); i++ {
 		value := maxDepthNEx(root.Children[i])
 		if maxValue < value {
-			 maxValue = value
+			maxValue = value
 		}
 	}
 	return maxValue + 1

@@ -2,11 +2,11 @@ package treeTag
 
 /**
 1305. 两棵二叉搜索树中的所有元素
-给你 root1 和 root2 这两棵二叉搜索树。
+给你 root1 和 root2 这两棵二叉搜索树。
 
-请你返回一个列表，其中包含 两棵树 中的所有整数并按 升序 排序。.
+请你返回一个列表，其中包含 两棵树 中的所有整数并按 升序 排序。.
 
- 
+
 
 示例 1：
 
@@ -30,11 +30,11 @@ package treeTag
 
 输入：root1 = [1,null,8], root2 = [8,1]
 输出：[1,1,8,8]
- 
+
 提示：
 
-每棵树最多有 5000 个节点。
-每个节点的值在 [-10^5, 10^5] 之间。
+每棵树最多有 5000 个节点。
+每个节点的值在 [-10^5, 10^5] 之间。
 
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/all-elements-in-two-binary-search-trees
