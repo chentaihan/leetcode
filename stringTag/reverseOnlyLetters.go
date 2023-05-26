@@ -57,6 +57,25 @@ func reverseOnlyLetters(S string) string {
 	return string(buf)
 }
 
+func reverseOnlyLettersEx(S string) string {
+	buf := []byte(S)
+	start, end := 0, len(S)-1
+	for start < end {
+		for start < end && !isChar(S[start]) {
+			start++
+		}
+		for start < end && !isChar(S[end]) {
+			end--
+		}
+		if start < end {
+			buf[start], buf[end] = buf[end], buf[start]
+			start++
+			end--
+		}
+	}
+	return string(buf)
+}
+
 func isChar(c byte) bool {
 	return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
 }
@@ -93,7 +112,7 @@ func TestreverseOnlyLetters() {
 	}
 
 	for _, test := range tests {
-		R := reverseOnlyLetters(test.S)
+		R := reverseOnlyLettersEx(test.S)
 		if R != test.R {
 			fmt.Println(R, test.R)
 		}

@@ -14,27 +14,27 @@ package stringTag
   "()()()"
 ]
 https://leetcode-cn.com/problems/generate-parentheses/description/
- */
+*/
 
-func generateParenthesis(n int) []string {
+func GenerateParenthesis(n int) []string {
 	var result []string
 	if n <= 0 {
 		return result
 	}
 	buffer := make([]byte, 0, n)
-	_generateParenthesis(buffer, &result, n, n)
+	generateParenthesis(buffer, &result, n, n)
 	return result
 }
 
-func _generateParenthesis(buffer []byte, result *[]string, left, right int) {
+func generateParenthesis(buffer []byte, result *[]string, left, right int) {
 	if left == 0 && right == 0 {
 		*result = append(*result, string(buffer))
 		return
 	}
 	if left > 0 {
-		_generateParenthesis(append(buffer, '('), result, left-1, right)
+		generateParenthesis(append(buffer, '('), result, left-1, right)
 	}
 	if left < right && right > 0 {
-		_generateParenthesis( append(buffer, ')'), result, left, right-1)
+		generateParenthesis(append(buffer, ')'), result, left, right-1)
 	}
 }

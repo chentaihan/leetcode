@@ -57,19 +57,50 @@ func dominantIndex(nums []int) int {
 	return index
 }
 
+func dominantIndexEx(nums []int) int {
+	if len(nums) < 1 {
+		return -1
+	}
+	index := 0
+	first, second := nums[0], nums[1]
+	if first < second {
+		first, second = second, first
+		index = 1
+	}
+	for i := 2; i < len(nums); i++ {
+		if nums[i] >= first {
+			second = first
+			first = nums[i]
+			index = i
+		}
+	}
+	if first >= second*2 {
+		return index
+	}
+	return -1
+}
+
 func TestdominantIndex() {
 	tests := []struct {
 		nums  []int
 		index int
 	}{
 		{
+			[]int{1, 2, 3, 8},
+			3,
+		},
+		{
 			[]int{3, 6, 1, 0},
 			1,
+		},
+		{
+			[]int{1, 2, 3, 4},
+			-1,
 		},
 	}
 
 	for _, test := range tests {
-		index := dominantIndex(test.nums)
+		index := dominantIndexEx(test.nums)
 		fmt.Println(index == test.index)
 	}
 }
