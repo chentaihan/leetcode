@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	mapTag.TestIsPathCrossing()
+	mapTag.TestCanBeTypedWords()
 }

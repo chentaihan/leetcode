@@ -54,7 +54,7 @@ import (
 func frequencySort(s string) string {
 	m := [256]int{}
 	buf := *(*[]byte)(unsafe.Pointer(&s))
-	for i := 0; i < len(s); i++{
+	for i := 0; i < len(s); i++ {
 		m[s[i]]++
 	}
 	sort.Slice(buf, func(i, j int) bool {
@@ -68,4 +68,22 @@ func frequencySort(s string) string {
 		}
 	})
 	return s
+}
+
+func frequencySortEx(nums []int) []int {
+	m := make(map[int]int, len(nums))
+	for i := 0; i < len(nums); i++ {
+		m[nums[i]]++
+	}
+	sort.Slice(nums, func(i, j int) bool {
+		switch {
+		case m[nums[i]] < m[nums[j]]:
+			return true
+		case m[nums[i]] == m[nums[j]]:
+			return nums[i] > nums[j]
+		default:
+			return false
+		}
+	})
+	return nums
 }
