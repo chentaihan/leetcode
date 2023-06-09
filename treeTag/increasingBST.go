@@ -7,7 +7,7 @@ import (
 
 /**
 897. 递增顺序查找树
- */
+*/
 
 func increasingBST(root *TreeNode) *TreeNode {
 	if root != nil {
@@ -27,6 +27,28 @@ func _increasingBST(root *TreeNode, result *TreeNode) {
 		result.Right = &TreeNode{Val: root.Val}
 		_increasingBST(root.Right, result)
 	}
+}
+
+func increasingBSTEx(root *TreeNode) *TreeNode {
+	if root == nil {
+		return nil
+	}
+	result := &TreeNode{}
+	list := result
+	var stack []*TreeNode
+	cur := root
+	for cur != nil || len(stack) > 0 {
+		for cur != nil {
+			stack = append(stack, cur)
+			cur = cur.Left
+		}
+		cur = stack[len(stack)-1]
+		list.Right = &TreeNode{Val: cur.Val}
+		list = list.Right
+		stack = stack[:len(stack)-1]
+		cur = cur.Right
+	}
+	return result.Right
 }
 
 func TestincreasingBST() {
@@ -65,7 +87,7 @@ func TestincreasingBST() {
 	}
 	for _, test := range tests {
 		root := CreateTree(test.nums)
-		root = increasingBST(root)
+		root = increasingBSTEx(root)
 		result := TreeFloor(root)
 		fmt.Println(common.IntEqual(test.result, result))
 	}

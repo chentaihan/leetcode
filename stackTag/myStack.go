@@ -1,13 +1,13 @@
 package stackTag
 
 import (
-	"github.com/chentaihan/leetcode/common"
 	"fmt"
+	"github.com/chentaihan/leetcode/common"
 )
 
 /**
 225. 用队列实现栈
- */
+*/
 
 type MyStack struct {
 	q1 common.Queue
@@ -78,6 +78,63 @@ func (this *MyStack) Empty() bool {
 // * param_4 := obj.Empty();
 // */
 
+type MyStackEx struct {
+	queue1 []int
+	queue2 []int
+}
+
+func ConstructorEx() MyStackEx {
+	return MyStackEx{}
+}
+
+func (this *MyStackEx) Push(x int) {
+	this.queue1 = append(this.queue1, x)
+}
+
+func (this *MyStackEx) Pop() int {
+	for len(this.queue1) > 0 {
+		val := this.queue1[0]
+		this.queue1 = this.queue1[1:]
+		if len(this.queue1) == 0 {
+			return val
+		}
+		this.queue2 = append(this.queue2, val)
+	}
+	for len(this.queue2) > 0 {
+		val := this.queue2[0]
+		this.queue2 = this.queue2[1:]
+		if len(this.queue2) == 0 {
+			return val
+		}
+		this.queue1 = append(this.queue1, val)
+	}
+	return -1
+}
+
+func (this *MyStackEx) Top() int {
+	for len(this.queue1) > 0 {
+		val := this.queue1[0]
+		this.queue2 = append(this.queue2, val)
+		this.queue1 = this.queue1[1:]
+		if len(this.queue1) == 0 {
+			return val
+		}
+	}
+	for len(this.queue2) > 0 {
+		val := this.queue2[0]
+		this.queue1 = append(this.queue1, val)
+		this.queue2 = this.queue2[1:]
+		if len(this.queue2) == 0 {
+			return val
+		}
+	}
+	return -1
+}
+
+func (this *MyStackEx) Empty() bool {
+	return len(this.queue1) == 0 && len(this.queue2) == 0
+}
+
 func TestStack() {
 	tests := []struct {
 		input  []int
@@ -88,7 +145,7 @@ func TestStack() {
 			[]int{9, 8, 7, 6, 5, 4, 3, 2, 1, 0},
 		},
 		{
-			[]int{0,},
+			[]int{0},
 			[]int{0},
 		},
 		{
@@ -102,7 +159,7 @@ func TestStack() {
 	}
 
 	for _, test := range tests {
-		s := NewMyStack()
+		s := ConstructorEx()
 		for _, item := range test.input {
 			s.Push(item)
 		}

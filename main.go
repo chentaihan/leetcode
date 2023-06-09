@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/chentaihan/leetcode/mapTag"
+	"github.com/chentaihan/leetcode/stackTag"
 )
 
 func main() {
-	mapTag.TestCanBeTypedWords()
+	stackTag.TestMyQeue()
 }

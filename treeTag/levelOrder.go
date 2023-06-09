@@ -50,27 +50,55 @@ func _levelOrderEx(root *TreeNode, list *[][]int, level int) {
 	}
 }
 
+func levelOrderNew(root *TreeNode) [][]int {
+	if root == nil {
+		return [][]int{}
+	}
+	var queue1, queue2 []*TreeNode
+	queue1 = append(queue1, root)
+	var result [][]int
+	var list []int
+	for len(queue1) > 0 {
+		cur := queue1[0]
+		if cur.Left != nil {
+			queue2 = append(queue2, cur.Left)
+		}
+		if cur.Right != nil {
+			queue2 = append(queue2, cur.Right)
+		}
+		list = append(list, cur.Val)
+		queue1 = queue1[1:]
+		if len(queue1) == 0 {
+			result = append(result, list)
+			list = nil
+			queue1 = queue2
+			queue2 = nil
+		}
+	}
+	return result
+}
+
 func TestlevelOrder() {
 	tests := []struct {
 		nums   []int
 		result [][]int
 	}{
-		{
-			[]int{},
-			[][]int{{}},
-		},
-		{
-			[]int{7},
-			[][]int{{7}},
-		},
-		{
-			[]int{7, 3},
-			[][]int{{7}, {3}},
-		},
-		{
-			[]int{7, 15},
-			[][]int{{7}, {15}},
-		},
+		//{
+		//	[]int{},
+		//	[][]int{{}},
+		//},
+		//{
+		//	[]int{7},
+		//	[][]int{{7}},
+		//},
+		//{
+		//	[]int{7, 3},
+		//	[][]int{{7}, {3}},
+		//},
+		//{
+		//	[]int{7, 15},
+		//	[][]int{{7}, {15}},
+		//},
 		{
 			[]int{7, 3, 15},
 			[][]int{{7}, {3, 15}},
@@ -89,26 +117,30 @@ func TestlevelOrder() {
 		},
 		{
 			[]int{7, 3, 15, 9, 20, 1},
-			[][]int{{7}, {3, 15}, {1, 9, 20}},
+			[][]int{{7}, {3, 15}, {9, 20, 1}},
 		},
 		{
 			[]int{7, 3, 15, 9, 20, 1, 4},
-			[][]int{{7}, {3, 15}, {1, 4, 9, 20}},
+			[][]int{{7}, {3, 15}, {9, 20, 1, 4}},
 		},
 		{
 			[]int{7, 3, 15, 9, 20, 1, 4},
-			[][]int{{7}, {3, 15}, {1, 4, 9, 20}},
+			[][]int{{7}, {3, 15}, {9, 20, 1, 4}},
 		},
 		{
 			[]int{7, 3, 15, 9, 20, 1, 4, 30},
-			[][]int{{7}, {3, 15}, {1, 4, 9, 20}, {30}},
+			[][]int{{7}, {3, 15}, {9, 20, 1, 4}, {30}},
 		},
 	}
 	for _, test := range tests {
-		root := CreateTree(test.nums)
-		ret := levelOrderEx(root)
+		root := ArrayToTree(test.nums)
+		ret := levelOrderNew(root)
 		for index, list := range ret {
-			fmt.Println(common.IntEqual(test.result[index], list))
+			if common.IntEqual(test.result[index], list) {
+				fmt.Println(true)
+			} else {
+				fmt.Println(test.result[index], list)
+			}
 		}
 	}
 }

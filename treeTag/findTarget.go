@@ -106,6 +106,40 @@ func _findTargetEx(root *TreeNode, k int, m map[int]bool) bool {
 	return false
 }
 
+func findTarget2(root *TreeNode, k int) bool {
+	if root == nil {
+		return false
+	}
+	var list []int
+	var stack []*TreeNode
+	cur := root
+	for cur != nil || len(stack) > 0 {
+		for cur != nil {
+			stack = append(stack, cur)
+			cur = cur.Left
+		}
+		cur = stack[len(stack)-1]
+		list = append(list, cur.Val)
+		stack = stack[:len(stack)-1]
+		cur = cur.Right
+	}
+	if len(list) < 2 {
+		return false
+	}
+	start, end := 0, len(list)-1
+	for start < end {
+		sum := list[start] + list[end]
+		if sum == k {
+			return true
+		} else if sum < k {
+			start++
+		} else {
+			end--
+		}
+	}
+	return false
+}
+
 func TestfindTarget() {
 	tests := []struct {
 		nums   []int
@@ -181,7 +215,7 @@ func TestfindTarget() {
 
 	for _, test := range tests {
 		root := ArrayToTree(test.nums)
-		result := findTargetEx(root, test.k)
+		result := findTarget2(root, test.k)
 		fmt.Println(result == test.result)
 	}
 }
